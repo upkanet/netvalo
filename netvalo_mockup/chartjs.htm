@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>ChartJS</title>
+	</head>
+	<style type="text/css">
+		.container {
+		  width: 80%;
+		  margin: 20px auto;
+		}
+
+		.p {
+		  text-align: center;
+		  font-size: 14px;
+		  padding-top: 140px;
+		}
+	</style>
+	<body>
+		<canvas id="chartCanvas"></canvas>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+		<script language="javascript">
+		var testDataSet = ["1700009","2442803","12559729","14551150","10372882","7501106","10056599","11739898","4547713","15000000","2848467","10399888","12583879","4585094","12595026"];
+
+		Array.prototype.max = function() {
+			return Math.max.apply(null, this);
+		};
+
+		Array.prototype.min = function() {
+			return Math.min.apply(null, this);
+		};
+
+		function groupChartValues(dataset){
+			var i,n;
+			var arr = [[],[],[],[],[],[],[],[],[],[]];
+			var interval = Math.round((dataset.max() - dataset.min()) / 10);
+			console.log("interval : " + interval)
+			for(i=0;i<dataset.length;i++){
+				for(n=0;n<10;n++){
+					if((dataset[i] >= n * interval + dataset.min()) && (dataset[i] < (n+1) * interval + 2 + dataset.min())){
+						arr[n].push(dataset[i]);
+					}
+				}
+			}
+			console.log(arr);
+			return arr;
+		}
+
+		var testArr = groupChartValues(testDataSet);
+
+		var barChartData = {
+			labels: [testDataSet.min(), "", "", "", "", "", "", "", "", testDataSet.max()],
+			datasets: [{
+				fillColor: "rgba(0,60,100,1)",
+				strokeColor: "black",
+				data: [testArr[0].length, testArr[1].length, testArr[2].length, testArr[3].length, testArr[4].length, testArr[5].length, testArr[6].length, testArr[7].length, testArr[8].length, testArr[9].length]
+			}]
+		};
+
+		var index = 11;
+		var ctx = document.getElementById("chartCanvas").getContext("2d");
+		var barChartDemo = new Chart(ctx).Bar(barChartData, {
+			responsive: true,
+			barValueSpacing: 2
+		});
+		</script>
+	</body>
+</html>
