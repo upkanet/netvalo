@@ -13,6 +13,10 @@ class CompteResultatController extends Controller
      */
     public function index()
     {
+        $toto = array_keys(config('balance_fields.cr_fields'));
+        foreach ($toto as $field) {
+            print_r($field);
+        }
         return "CR";
     }
 
