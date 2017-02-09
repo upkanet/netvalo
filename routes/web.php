@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('bilans', 'BilanController');
+Route::resource('crs', 'CompteResultatController');
