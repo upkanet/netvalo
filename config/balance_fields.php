@@ -1,4 +1,4 @@
-.bcdfjpr<?php
+<?php
 
 return [
 
