@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\Bilan;
+use App\CR;
 
 class CompanyController extends Controller
 {
@@ -47,7 +49,11 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        //
+        $company = Company::find($id);
+        $bilans = $company->bilans;
+        $crs = $company->crs;
+
+        return view('company', compact('company','bilans','crs'));
     }
 
     /**

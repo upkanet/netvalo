@@ -14,4 +14,9 @@ class Company extends Model
     {
     	return $this->hasMany('App\Bilan');
     }
+
+    public function crs()
+    {
+    	return $this->hasMany('App\CR');
+    }
 }

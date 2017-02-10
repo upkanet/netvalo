@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <ul>
                     @foreach ($companies as $company)
-                        <li>{{$company->name}}</li>
+                        <li><a href="companies/{{$company->id}}">{{$company->name}}</a></li>
                     @endforeach
                     </ul>
                 </div>
