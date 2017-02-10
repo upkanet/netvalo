@@ -24,7 +24,7 @@ return [
         'mat_indus' => 'Installations techniques, matériel et outillage industriels',
         'autres_imm_co' => 'Autres immobilisations corporelles',
         'imm_en_cours' => 'Immobilisations en cours',
-        'avac' => 'Avances et acomptes',
+        'avac_imm_co' => 'Avances et acomptes',
         'part_equiv' => 'Participations évaluées selon la méthode de mise en équivalence',
         'autres_part' => 'Autres participations',
         'creances_part' => 'Créances rattachées à des participations',
@@ -117,6 +117,24 @@ return [
         'dot_excep_amo' => 'Dotations exceptionnelles aux amortissements et provisions',
         'part_sal' => 'Participation des salariés aux résultats de l\'entreprise',
         'impots_benef' => 'Impôts sur les bénéfices',
+    ],
+
+    'bilan_ss_tot' => [
+        //Actif
+        'imm_inco' => ['frais_etab','frais_dev','concess','fds_comm','autres_imm_inco','avac_imm_inco'],
+        'imm_co' => ['terrains', 'construc', 'mat_indus', 'autres_imm_co', 'imm_en_cours', 'avac_imm_co'],
+        'imm_fi' => ['part_equiv', 'autres_part', 'creances_part', 'autres_titres_imm', 'prets', 'autres_imm_fi'],
+        'actif_imm' => ['st.imm_inco', 'st.imm_co', 'st.imm_fi'],
+        'stocks' => ['mp_appro', 'encours_prod_biens', 'encours_prod_services', 'prod_interm_fin', 'marchandises'],
+        'creances' => ['creances_clients', 'autres_creances', 'cap_sous_a_nv'],
+        'ac_div' => ['val_mob', 'dispo'],
+        'actif_circ' => ['st.stocks', 'avac_comm', 'st.creances', 'st.ac_div'],
+        'comptes_regul' => ['charges_ca', 'frais_emm_emp_et', 'primes_remb_oblig','ecart_conv_actif'],
+        'actif' => ['st.actif_imm', 'st.actif_circ', 'st.comptes_regul'],
+        //Passif
+        'capitaux_propres' => ['cap_soc_indiv', 'primes_fus_emm_ap', 'ecart_reeval','res_leg', 'res_stat_contract', 'res_reg', 'autres_res', 'report_anouv', 'result_ex', 'sub_invest', 'prov_reg'],
+        '' => [''],
+
     ],
 
 ];
