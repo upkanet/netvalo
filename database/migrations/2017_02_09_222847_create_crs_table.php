@@ -24,7 +24,7 @@ class CreateCrsTable extends Migration
             //Figures fields
             $fields = array_keys(config('balance_fields.cr_fields'));
             foreach ($fields as $field) {
-                $table->bigInteger($field)->unsigned();
+                $table->bigInteger($field);
             }
             //Timestamps
             $table->timestamps();

@@ -24,7 +24,7 @@ class CreateBilansTable extends Migration
             //Figures fields
             $fields = array_keys(config('balance_fields.bilan_fields'));
             foreach ($fields as $field) {
-                $table->bigInteger($field)->unsigned();
+                $table->bigInteger($field);
             }
             //Timestamps
             $table->timestamps();
