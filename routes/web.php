@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::resource('companies', 'CompanyController');
 Route::resource('bilans', 'BilanController');
 Route::resource('crs', 'CompteResultatController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
