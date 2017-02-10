@@ -14,11 +14,19 @@ class CreateCrsTable extends Migration
     public function up()
     {
         Schema::create('crs', function (Blueprint $table) {
-            $fields = array_keys(config('balance_fields.cr_fields'));
             $table->increments('id');
+
+            //Relation with companies table
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies');
+
+            $table->smallInteger('year')->unsigned();
+            //Figures fields
+            $fields = array_keys(config('balance_fields.cr_fields'));
             foreach ($fields as $field) {
                 $table->bigInteger($field)->unsigned();
             }
+            //Timestamps
             $table->timestamps();
         });
     }

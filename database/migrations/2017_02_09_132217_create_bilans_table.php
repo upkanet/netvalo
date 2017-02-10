@@ -14,11 +14,19 @@ class CreateBilansTable extends Migration
     public function up()
     {
         Schema::create('bilans', function (Blueprint $table) {
-            $fields = array_keys(config('balance_fields.bilan_fields'));
             $table->increments('id');
+
+            //Relation with companies table
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies');
+
+            $table->smallInteger('year')->unsigned();
+            //Figures fields
+            $fields = array_keys(config('balance_fields.bilan_fields'));
             foreach ($fields as $field) {
                 $table->bigInteger($field)->unsigned();
             }
+            //Timestamps
             $table->timestamps();
         });
     }
