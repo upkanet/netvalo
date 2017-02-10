@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Company;
+use App\CR;
 
 class CompteResultatController extends Controller
 {
@@ -49,7 +51,10 @@ class CompteResultatController extends Controller
      */
     public function show($id)
     {
-        //
+        $cr = CR::find($id);
+        $company = $cr->company;
+        $fields = config('balance_fields.cr_fields');
+        return view('cr', compact('cr','company','fields'));
     }
 
     /**
