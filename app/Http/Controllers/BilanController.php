@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Company;
+use App\Bilan;
 
 class BilanController extends Controller
 {
@@ -49,7 +51,10 @@ class BilanController extends Controller
      */
     public function show($id)
     {
-        //
+        $bilan = Bilan::find($id);
+        $company = $bilan->company;
+        $fields = config('balance_fields.bilan_fields');
+        return view('bilan', compact('bilan','company','fields'));
     }
 
     /**
