@@ -8,6 +8,6 @@ class Company extends Model
 {
     public function bilans()
     {
-    	return $this->hasMany('App\Bilan')->withPivot('year');
+    	return $this->hasMany('App\Bilan');
     }
 }

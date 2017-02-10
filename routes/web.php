@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('companies', 'CompanyController');
 Route::resource('bilans', 'BilanController');
 Route::resource('crs', 'CompteResultatController');

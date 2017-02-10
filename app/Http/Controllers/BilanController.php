@@ -13,10 +13,10 @@ class BilanController extends Controller
      */
     public function index()
     {
-        $toto = array_keys(config('balance_fields.bilan_fields'));
-        foreach ($toto as $field) {
-            print_r($field);
-        }
+        /*$user = User::find(1);
+        foreach ($user->bilans as $bilan) {
+            $bilan->year;
+        }*/
         return 'Bilan';
     }
 
