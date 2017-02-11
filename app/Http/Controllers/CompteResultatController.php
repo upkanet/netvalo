@@ -58,6 +58,12 @@ class CompteResultatController extends Controller
         foreach ($ss_tots as $ss_tot_key => $ss_tot_value) {
             print_r('SIG '.$ss_tot_key.' : '.$cr->sig($ss_tot_key).'<br>');
         }
+        print_r('<hr>CA : '.$cr->CA.'<hr>');
+        print_r('<hr>Rex : '.$cr->Rex.'<hr>');
+        print_r('<hr>Rfi : '.$cr->Rfi.'<hr>');
+        print_r('<hr>RCAI : '.$cr->RCAI.'<hr>');
+        print_r('<hr>Rexcep : '.$cr->Rexcep.'<hr>');
+        print_r('<hr>RN : '.$cr->RN.'<hr>');
         return view('cr', compact('cr','company','fields'));
     }
 
