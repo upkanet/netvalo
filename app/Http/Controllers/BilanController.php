@@ -59,6 +59,13 @@ class BilanController extends Controller
             //print_r($ss_tot_key.' : '.$bilan->sig($ss_tot_key));
             print_r('SIG '.$ss_tot_key.' : '.$bilan->sig($ss_tot_key).'<br>');
         }
+        print_r('<hr>Immo : '.$bilan->Immo.'<hr>');
+        print_r('<hr>BFR : '.$bilan->BFR.'<hr>');
+        print_r('<hr>TrezNette : '.$bilan->TrezNette.'<hr>');
+        print_r('<hr>AE : '.$bilan->AE.'<hr>');
+        print_r('<hr>CP : '.$bilan->CP.'<hr>');
+        print_r('<hr>Dette Fi : '.$bilan->DetteFi.'<hr>');
+        print_r('<hr>CE : '.$bilan->CE.'<hr>');
         return view('bilan', compact('bilan','company','fields'));
     }
 

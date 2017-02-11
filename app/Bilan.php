@@ -7,7 +7,7 @@ use Log;
 
 class Bilan extends Model
 {
-    
+    protected $appends = ['Immo', 'BFR', 'TrezNette', 'AE', 'CP', 'DetteFi'];
 
     public function company()
     {
@@ -32,5 +32,47 @@ class Bilan extends Model
     		echo "Error : Bilan-Model no such field ".$field;
     		exit();
     	}
+    }
+
+    //Actif Economique
+    public function getImmoAttribute(){
+    	return $this->sig('actif_imm');
+    }
+
+    public function getStocksAttribute(){
+    	return $this->sig('stocks');
+    }
+
+    public function getCreancesExploitAttribute(){
+    	return $this->sig('creances_exploit');
+    }
+
+    public function getDettesExploitAttribute(){
+    	return $this->sig('dettes_exploit') - $this->sig('prod_ca');
+    }
+
+    public function getBFRAttribute(){
+    	return $this->stocks + $this->creances_exploit - $this->dettes_exploit;
+    }
+
+    public function getTrezNetteAttribute(){
+    	return $this->sig('ac_div') + $this->sig('comptes_regul');
+    }
+
+    public function getAEAttribute(){
+    	return $this->Immo + $this->BFR + $this->TrezNette;
+    }
+
+    //Capital Employe
+    public function getCPAttribute(){
+    	return $this->sig('capitaux_propres') + $this->sig('autres_fds_propres') + $this->sig('prov_rc');
+    }
+
+    public function getDetteFiAttribute(){
+    	return $this->sig('dettes_fi');
+    }
+
+    public function getCEAttribute(){
+    	return $this->CP + $this->DetteFi;
     }
 }
