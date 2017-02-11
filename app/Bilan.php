@@ -7,7 +7,7 @@ use Log;
 
 class Bilan extends Model
 {
-    protected $appends = ['Immo', 'BFR', 'TrezNette', 'AE', 'CP', 'DetteFi'];
+    protected $appends = ['Immo', 'Stocks', 'CreancesExploit', 'DettesExploit', 'BFR', 'TrezNette', 'AE', 'CP', 'DetteFi', 'CE'];
 
     public function company()
     {

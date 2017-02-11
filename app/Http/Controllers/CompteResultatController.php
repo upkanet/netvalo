@@ -59,11 +59,18 @@ class CompteResultatController extends Controller
             print_r('SIG '.$ss_tot_key.' : '.$cr->sig($ss_tot_key).'<br>');
         }
         print_r('<hr>CA : '.$cr->CA.'<hr>');
+        print_r('<hr>MargeComm : '.$cr->MargeComm.'<hr>');
+        print_r('<hr>ProdExe : '.$cr->ProdExe.'<hr>');
+        print_r('<hr>MargeProd : '.$cr->MargeProd.'<hr>');
+        print_r('<hr>MargeGlob : '.$cr->MargeGlob.'<hr>');
+        print_r('<hr>VA : '.$cr->VA.'<hr>');
+        print_r('<hr>EBE : '.$cr->EBE.'<hr>');
         print_r('<hr>Rex : '.$cr->Rex.'<hr>');
         print_r('<hr>Rfi : '.$cr->Rfi.'<hr>');
         print_r('<hr>RCAI : '.$cr->RCAI.'<hr>');
         print_r('<hr>Rexcep : '.$cr->Rexcep.'<hr>');
         print_r('<hr>RN : '.$cr->RN.'<hr>');
+        print_r('<hr>CAF : '.$cr->CAF.'<hr>');
         return view('cr', compact('cr','company','fields'));
     }
 
