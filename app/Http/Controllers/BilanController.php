@@ -54,6 +54,11 @@ class BilanController extends Controller
         $bilan = Bilan::find($id);
         $company = $bilan->company;
         $fields = config('balance_fields.bilan_fields');
+        $ss_tots = config('balance_fields.bilan_ss_tot');
+        foreach ($ss_tots as $ss_tot_key => $ss_tot_value) {
+            //print_r($ss_tot_key.' : '.$bilan->sig($ss_tot_key));
+            print_r('SIG '.$ss_tot_key.' : '.$bilan->sig($ss_tot_key).'<br>');
+        }
         return view('bilan', compact('bilan','company','fields'));
     }
 
