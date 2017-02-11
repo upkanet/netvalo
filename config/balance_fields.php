@@ -133,8 +133,24 @@ return [
         'actif' => ['actif_imm', 'actif_circ', 'comptes_regul'],
         //Passif
         'capitaux_propres' => ['cap_soc_indiv', 'primes_fus_emm_ap', 'ecart_reeval','res_leg', 'res_stat_contract', 'res_reg', 'autres_res', 'report_anouv', 'result_ex', 'sub_invest', 'prov_reg'],
-        '' => ['x'],
+        'autres_fds_propres' => ['prod_emm_part','av_condt'],
+        'prov_rc' => ['prov_risques','prov_charges'],
+        'dettes' => ['emp_oblig_conv', 'autres_emp_oblig', 'emprunt_etab_credit', 'dette_fi_div', 'avac_rec_comm', 'dette_fourn', 'dette_fisc', 'dette_immo'],
+        'tot_4' => ['dettes', 'prod_ca'],
+        'passif' => ['capitaux_propres', 'autres_fds_propres', 'prov_rc', 'tot_4', 'ecart_conv_pass'],
 
+    ],
+
+    'cr_ss_tot' => [
+        'CAnet' => ['ventes_march', 'prod_vendue_biens', 'prod_vendue_services'],
+        '' => [''],
+        '' => [''],
+        '' => [''],
+        '' => [''],
+        '' => [''],
+        '' => [''],
+        '' => [''],
+        '' => [''],
     ],
 
 ];
