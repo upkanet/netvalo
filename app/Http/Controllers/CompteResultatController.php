@@ -54,6 +54,10 @@ class CompteResultatController extends Controller
         $cr = CR::find($id);
         $company = $cr->company;
         $fields = config('balance_fields.cr_fields');
+        $ss_tots = config('balance_fields.cr_ss_tot');
+        foreach ($ss_tots as $ss_tot_key => $ss_tot_value) {
+            print_r('SIG '.$ss_tot_key.' : '.$cr->sig($ss_tot_key).'<br>');
+        }
         return view('cr', compact('cr','company','fields'));
     }
 

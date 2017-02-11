@@ -143,14 +143,16 @@ return [
 
     'cr_ss_tot' => [
         'CAnet' => ['ventes_march', 'prod_vendue_biens', 'prod_vendue_services'],
-        '' => [''],
-        '' => [''],
-        '' => [''],
-        '' => [''],
-        '' => [''],
-        '' => [''],
-        '' => [''],
-        '' => [''],
+        'prod_exploit' => ['CAnet', 'prod_stock', 'prod_imm', 'sub_exploit', 'reprise_amo_prov', 'autres_prod'],
+        'dot_exploit' => ['dot_ex_imm_amo', 'dot_ex_imm_prov', 'dot_ex_ac', 'dot_ex_risques'],
+        'charges_exploit' => ['achats_march', 'var_stock_march', 'achats_mp', 'var_stock_mp', 'autres_achats', 'impots_taxes', 'salaires', 'charges_soc', 'dot_exploit', 'autres_charges'],
+        'op_commun' => ['benef_att', 'pertes_supp'],
+        'prod_fi' => ['prod_fi_part', 'prod_autres_valmob', 'autres_int', 'prod_fi_reprise_prov', 'diff_pos_change', 'prod_net_cession_valmob'],
+        'charges_fi' => ['dot_fi_amo_prov', 'interets', 'diff_neg_change', 'charges_net_cession_valmob'],
+        'prod_excep' => ['prod_excep_gest', 'prod_excep_cap'],
+        'charges_excep' => ['charges_excep_gestion', 'chagres_excep_cap', 'dot_excep_amo'],
+        'prod' => ['prod_exploit', 'benef_att', 'prod_fi', 'prod_excep'],
+        'charges' => ['charges_exploit', 'pertes_supp', 'charges_fi', 'charges_excep', 'part_sal', 'impots_benef'],
     ],
 
 ];
