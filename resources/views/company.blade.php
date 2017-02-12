@@ -1,4 +1,4 @@
-{{$company->name}} - {{$latestYear}}<br>
+{{$company->name}}<br>
 Bilans
 <ul>
 @foreach ($bilans as $bilan)
@@ -9,5 +9,10 @@ CRs
 <ul>
 @foreach ($crs as $cr)
     <li><a href="../crs/{{$cr->id}}">{{$cr->year}}</a></li>
+@endforeach
+</ul>
+<ul>
+@foreach ($availableYears as $availableYear)
+    <li><a href="{{$company->id}}/analysis/{{$availableYear}}">{{$availableYear}}</a></li>
 @endforeach
 </ul>

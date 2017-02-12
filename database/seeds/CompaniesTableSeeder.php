@@ -16,5 +16,11 @@ class CompaniesTableSeeder extends Seeder
         	'name' => 'World Company',
         	'siret' => '123456789ABCDE',
     	]);
+
+        DB::table('companies')->insert([
+            'user_id' => 1,
+            'name' => 'Empty Company',
+            'siret' => '88776655443345',
+        ]);
     }
 }

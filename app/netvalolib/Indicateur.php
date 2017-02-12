@@ -23,10 +23,6 @@ class Indicateur
     	$this->crN2 = $this->company->cr($year-2);
 	}
 
-	public static function availableYears(Company $company){
-		return 0;
-	}
-
 	public function CAGR(){
 		return intval((sqrt($this->crN->CA / $this->crN2->CA) - 1) * 100);
 	}

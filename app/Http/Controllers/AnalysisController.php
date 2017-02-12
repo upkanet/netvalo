@@ -14,6 +14,6 @@ class AnalysisController extends Controller
     	$company = Company::find($companyId);
     	$indic = new Indicateur($company, $year);
     	
-    	return 'comp : ' .$companyId.'/'.$year;
+    	return view('analysis', compact('company', 'indic'));
     }
 }
