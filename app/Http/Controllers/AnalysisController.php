@@ -13,6 +13,8 @@ class AnalysisController extends Controller
     public function show($companyId, $year){
     	$company = Company::find($companyId);
     	$indic = new Indicateur($company, $year);
+
+    	print_r($indic->evoBilan());
     	
     	return view('analysis', compact('company', 'indic'));
     }

@@ -11,6 +11,7 @@ CRs
     <li><a href="../crs/{{$cr->id}}">{{$cr->year}}</a></li>
 @endforeach
 </ul>
+Analyses
 <ul>
 @foreach ($availableYears as $availableYear)
     <li><a href="{{$company->id}}/analysis/{{$availableYear}}">{{$availableYear}}</a></li>
