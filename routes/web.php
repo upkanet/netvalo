@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::resource('companies', 'CompanyController');
 Route::resource('bilans', 'BilanController');
 Route::resource('crs', 'CompteResultatController');
+Route::get('/companies/{company}/analysis/{year}','AnalysisController@show');
 
 Auth::routes();
 

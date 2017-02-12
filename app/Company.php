@@ -15,8 +15,16 @@ class Company extends Model
     	return $this->hasMany('App\Bilan');
     }
 
+    public function bilan($year){
+        return $this->bilans()->where('year', $year)->first();
+    }
+
     public function crs()
     {
     	return $this->hasMany('App\CR');
+    }
+
+    public function cr($year){
+        return $this->crs()->where('year', $year)->first();
     }
 }
