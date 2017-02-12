@@ -52,8 +52,9 @@ class CompanyController extends Controller
         $company = Company::find($id);
         $bilans = $company->bilans;
         $crs = $company->crs;
+        $latestYear = $company->latestYear();
 
-        return view('company', compact('company','bilans','crs'));
+        return view('company', compact('company','bilans','crs','latestYear'));
     }
 
     /**

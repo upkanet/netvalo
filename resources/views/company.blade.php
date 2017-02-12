@@ -1,4 +1,4 @@
-{{$company->name}}<br>
+{{$company->name}} - {{$latestYear}}<br>
 Bilans
 <ul>
 @foreach ($bilans as $bilan)

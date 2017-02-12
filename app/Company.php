@@ -15,6 +15,18 @@ class Company extends Model
     	return $this->hasMany('App\Bilan');
     }
 
+    public function latestBilanYear(){
+        return $this->bilans->max('year');
+    }
+
+    public function latestCRYear(){
+        return $this->crs->max('year');
+    }
+
+    public function latestYear(){
+        return max($this->latestBilanYear(), $this->latestCRYear());
+    }
+
     public function bilan($year){
         return $this->bilans()->where('year', $year)->first();
     }
