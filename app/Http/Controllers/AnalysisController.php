@@ -7,17 +7,15 @@ use App\Company;
 use App\Bilan;
 use App\CR;
 use App\netvalolib\Indicateur;
-use App\netvalolib\LiasseFiscPond;
+use App\netvalolib\Valo;
 
 class AnalysisController extends Controller
 {
     public function show($companyId, $year){
     	$company = Company::find($companyId);
     	$indic = new Indicateur($company, $year);
-    	$lfpond = new LiasseFiscPond($company, $year);
-
-    	print_r($lfpond->CA());
+    	$valo = new Valo($company, $year);
     	
-    	return view('analysis', compact('company', 'indic'));
+    	return view('analysis', compact('company','indic','valo'));
     }
 }

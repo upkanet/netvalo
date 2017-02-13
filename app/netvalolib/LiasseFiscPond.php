@@ -7,8 +7,9 @@ use App\CR;
 class LiasseFiscPond
 {
 	public $year,$company;
-	private $bilanN;
-	private $crN, $crN1, $crN2;
+	public $bilanN;
+	public $crN;
+	private $crN1, $crN2;
 	private $coeffN, $coeffN1, $coeffN2;
 
 	public function __construct(Company $company, $year){
