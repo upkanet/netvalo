@@ -63,7 +63,7 @@
   						<h3 class="panel-title">D&eacute;jà membre ?</h3>
   					</div>
   					<div class="panel-body">
-  						<button class="btn btn-default btn-block" type="submit">Se connecter</button>
+  						<button class="btn btn-default btn-block" data-toggle="modal" data-target="#loginModal">Se connecter</button>
   					</div>
   				</div>
           <div class="panel panel-default">
@@ -84,13 +84,51 @@
       <div class="row">
         <p class="text-center" id="footer">2017 &copy; NetValo</p>
       </div>
-  	</div>
+    </div>
 
-  	<!-- Javascripts -->
-  	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  	<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Javascripts -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  	<script src="https://1000hz.github.io/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="https://1000hz.github.io/bootstrap-validator/dist/validator.min.js"></script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Acc&egrave;s membre</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form" data-toggle="validator">
+              <fieldset>
+                <div class="form-group">
+                  <label for="inputLoginEmail" class="col-lg-3 control-label">Email</label>
+                  <div class="col-lg-9">
+                    <input type="email" class="form-control" id="inputLoginEmail" placeholder="email@entreprise.com" data-error="Ins&eacute;rez une adresse email valide" required>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputLoginPassword" class="col-lg-3 control-label">Mot de Passe</label>
+                  <div class="col-lg-9">
+                    <input type="password" class="form-control" id="inputLoginPassword" placeholder="Mot de Passe" required>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-12">
+                    <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  </html>
+</html>
