@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','Mes entreprises')
+
 @section('css')
 @parent
 <link rel="stylesheet" type="text/css" href="css/welcome.css">

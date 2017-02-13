@@ -1,0 +1,27 @@
+.indic-table-header {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+.indic-table-footer {
+	background-color: #dddddd;
+	color: black;
+	font-weight: bold;
+	border-top: 1px solid black;
+}
+
+.bcg-cell {
+	background-color: #dddddd;
+	border : 0.5px solid white;
+	text-align: center;
+	height: 50px;
+	padding-top: 13px;
+}
+
+.bcg-cell-selected {
+	background-color: black;
+	color: white;
+	border: black;
+}

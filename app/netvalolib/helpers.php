@@ -19,3 +19,11 @@ function stddev($array) {
     // square root of sum of squares devided by N-1
     return sqrt(array_sum(array_map("sd_square", $array, array_fill(0,count($array), (array_sum($array) / count($array)) ) ) ) / (count($array)-1) );
 }
+
+function mille($number) {
+	return number_format($number,0, ',', ' ');
+}
+
+function million($number){
+	return number_format($number/1000000,1,',',' ');
+}

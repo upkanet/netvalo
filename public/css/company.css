@@ -49,3 +49,10 @@ body{
 	color : black;
 }
 
+#navIndic {
+	background-color: rgba(255,255,255,0.8);
+}
+
+#contentIndic {
+	background-color: rgba(255,255,255,0.4);
+}
