@@ -17,6 +17,7 @@ html{
 	color : white;
 }
 
+/* Remove the default bullet point */
 #services_list li {
     display: block;
 }
