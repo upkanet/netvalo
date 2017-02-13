@@ -1,0 +1,33 @@
+body{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+html{
+	/* This image will be displayed fullscreen */
+	background:url('new-york-skyscrapers.jpg') no-repeat center center;
+
+	/* Ensure the html element always takes up the full height of the browser window */
+	min-height:100%;
+
+	/* The Magic */
+	background-size:cover;
+}
+
+#footer{
+	color : white;
+}
+
+#services_list li {
+    display: block;
+}
+
+#services_list li:before {
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    content: "\e080";
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -17px;
+    color: #CCCCCC;
+}

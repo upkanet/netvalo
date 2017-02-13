@@ -6,7 +6,8 @@
 
 	<!-- Bootstrap core CSS -->
 	<!--<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
-	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="home.css">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -15,45 +16,71 @@
       <![endif]-->
   </head>
   <body>
-  	<div class="container">
+  	<div class="container" id="mainContainer">
   		<div class="page-header">
   			<h1>NetValo</h1>
-  			<h3>Estimez la valeur d'une entreprise gratuitement</h3>
+  			<h4>Estimez gratuitement la valeur de votre entreprise</h4>
   		</div>
   		<div class="row">
-  			<div class="col-sm-2"></div>
+  			<div class="col-sm-5 col-sm-offset-1">
+  				<div class="well bs-component">
+  					<form class="form-horizontal">
+              <fieldset>
+                <legend>Cr&eacute;er un compte</legend>
+                <div class="form-group">
+                  <label for="inputEmail" class="col-lg-3 control-label">Email</label>
+                  <div class="col-lg-9">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="email@entreprise.com">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-lg-3 control-label">Mot de Passe</label>
+                  <div class="col-lg-9">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Mot de Passe">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputConfPassword" class="col-lg-3 control-label">Confirmer</label>
+                  <div class="col-lg-9">
+                    <input type="password" class="form-control" id="inputConfPassword" placeholder="Confirmer votre Mot de Passe">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-12">
+                    <button type="submit" class="btn btn-primary btn-block">Cr&eacute;er</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+  				</div>
+  			</div>
   			<div class="col-sm-4">
   				<div class="panel panel-primary">
   					<div class="panel-heading">
-  						<h3 class="panel-title">Nouvel utilisateur</h3>
+  						<h3 class="panel-title">D&eacute;jà membre ?</h3>
   					</div>
   					<div class="panel-body">
-  						<form class="form-signin">
-  							<h2 class="form-signin-heading">Cr&eacute;er un compte</h2>
-  							<label for="inputEmail" class="sr-only">Email</label>
-  							<label for="inputPassword" class="sr-only">Mot de passe</label>
-
-  							<input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-  							<input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-
-  							<p>&nbsp;</p>
-  							<button class="btn btn-lg btn-primary btn-block" type="submit">S'enregister</button>
-  						</form>
+  						<button class="btn btn-default btn-block" type="submit">Se connecter</button>
   					</div>
   				</div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Vos services <strong>gratuits</strong></h3>
+            </div>
+            <div class="panel-body">
+              <ul id="services_list">
+                <li>Estimation de la valeur selon <strong>8 m&eacute;thodes</strong></li>
+                <li>Analyse Financi&egrave;re</li>
+                <li>Conseils Strat&eacute;giques</li>
+                <li>Mise en relation avec des Experts</li>
+              </ul>
+            </div>
+          </div>
   			</div>
-  			<div class="col-sm-4">
-  				<div class="panel panel-default">
-  					<div class="panel-heading">
-  						<h3 class="panel-title">Déjà membre ?</h3>
-  					</div>
-  					<div class="panel-body">
-  						<button class="btn btn-lg btn-default btn-block" type="submit">Se connecter</button>
-  					</div>
-  				</div>
-  			</div>
-  			<div class="col-sm-2"></div>
   		</div>
+      <div class="row">
+        <p class="text-center" id="footer">2017 &copy; NetValo</p>
+      </div>
   	</div>
 
   	<!-- Javascripts -->
