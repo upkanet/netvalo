@@ -1,0 +1,44 @@
+body{
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.btn-rnd {
+	width:120px;
+	height:60px;
+	border-radius:30px;
+	text-align: center;
+	font-size: 20px;
+	line-height: 50px;
+	margin: 10px;
+}
+
+.companyYears {
+	line-height: 70px;
+	font-size: 20px;
+	color: black;
+}
+
+#companiesList {
+	height:100%;
+	position:fixed; 
+	left:0px; 
+	top:0px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.companyBtn{
+	white-space: normal;
+}
+
+#analysisList {
+	height:100%;
+	position:fixed; 
+	right:0px; 
+	top:0px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.yearList {
+	font-size: 20px;
+	margin-top: 20px;
+}

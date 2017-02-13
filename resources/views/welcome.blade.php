@@ -88,9 +88,6 @@
       </div>
         </div>
     </div>
-  <div class="row">
-    <p class="text-center" id="footer">2017 &copy; NetValo</p>
-  </div>
 </div>
 @endsection
 

@@ -49,10 +49,11 @@ class BilanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($companyId, $year)
     {
-        $bilan = Bilan::find($id);
-        $company = $bilan->company;
+        $company = Company::find($companyId);
+        $bilan = $company->bilan($year);
+
         $fields = config('balance_fields.bilan_fields');
         $ss_tots = config('balance_fields.bilan_ss_tot');
         foreach ($ss_tots as $ss_tot_key => $ss_tot_value) {

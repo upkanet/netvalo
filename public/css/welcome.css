@@ -32,8 +32,3 @@ html{
     margin-left: -17px;
     color: #CCCCCC;
 }
-
-.modal-backdrop {
-    /* bug fix - no overlay */    
-    display: none;    
-}

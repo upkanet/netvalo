@@ -49,10 +49,11 @@ class CompteResultatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($companyId, $year)
     {
-        $cr = CR::find($id);
-        $company = $cr->company;
+        $company = Company::find($companyId);
+        $cr = $company->cr($year);
+
         $fields = config('balance_fields.cr_fields');
         $ss_tots = config('balance_fields.cr_ss_tot');
         foreach ($ss_tots as $ss_tot_key => $ss_tot_value) {

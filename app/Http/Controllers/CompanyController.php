@@ -50,11 +50,9 @@ class CompanyController extends Controller
     public function show($id)
     {
         $company = Company::find($id);
-        $bilans = $company->bilans;
-        $crs = $company->crs;
-        $availableYears = $company->availableYears();
+        $availableDocsArray = $company->availableDocsArray();
 
-        return view('company', compact('company','bilans','crs','availableYears'));
+        return view('company', compact('company','availableDocsArray'));
     }
 
     /**

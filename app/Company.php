@@ -48,16 +48,21 @@ class Company extends Model
         return ($this->bilan($year) !== null) && ($this->bilan($year-1) !== null) && ($this->cr($year) !== null) && ($this->cr($year-1) !== null)  && ($this->cr($year-2) !== null);
     }
 
-    public function availableYears(){
-        $y = $this->latestYear();
-        $availableYears =[];
+    public function availableDocsArray(){
+        $avDocs = [];
+        //get first year
+        $miny = min($this->bilans->min('year'), $this->crs->min('year'));
+        //get last year
+        $maxy = max($this->bilans->max('year'), $this->crs->max('year'));
 
-        while ($this->hasB2CR3($y)) {
-            $availableYears[] = $y;
-            $y--;
+        for($i=$miny; $i <= $maxy; $i++){
+            $this->bilan($i) != null ? $avDocs[$i]['bilan'] = true : $avDocs[$i]['bilan'] = false;
+            $this->cr($i) != null ? $avDocs[$i]['cr'] = true : $avDocs[$i]['cr'] = false;
+            $this->hasB2CR3($i) != null ? $avDocs[$i]['analysis'] = true : $avDocs[$i]['analysis'] = false;
         }
 
-        return $availableYears;
+        krsort($avDocs);
 
+        return $avDocs;
     }
 }

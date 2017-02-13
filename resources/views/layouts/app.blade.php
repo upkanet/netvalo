@@ -31,6 +31,12 @@
 @section('content')
 @show
 
+<div id="footer">
+    @section('footer')
+    <p class="text-center">2017 &copy; NetValo</p>
+    @show
+</div>
+
 <!-- Javascripts -->
 @section('js')
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

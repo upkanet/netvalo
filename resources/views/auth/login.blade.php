@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Estimez gratuitement le prix de votre entreprise')
+@section('title','Se connecter')
 
 @section('css')
 @parent
@@ -51,8 +51,5 @@
             </div>
         </div>
     </div>
-  <div class="row">
-    <p class="text-center" id="footer">2017 &copy; NetValo</p>
-  </div>
 </div>
 @endsection

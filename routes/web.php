@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('companies', 'CompanyController');
-Route::resource('bilans', 'BilanController');
-Route::resource('crs', 'CompteResultatController');
+Route::resource('companies', 'CompanyController', ['except' => ['index']]);
+Route::resource('bilans', 'BilanController', ['except' => ['index', 'show']]);
+Route::resource('crs', 'CompteResultatController', ['except' => ['index', 'show']]);
 Route::get('/companies/{company}/analysis/{year}','AnalysisController@show');
+Route::get('/companies/{company}/bilan/{year}','BilanController@show');
+Route::get('/companies/{company}/cr/{year}','CompteResultatController@show');
 
 Auth::routes();
 
