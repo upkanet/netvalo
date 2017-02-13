@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<form action="{{ route('logout') }}" method="post">
+    {{ csrf_field() }}
+    <input type="submit" value="logout">
+</form>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
