@@ -20,27 +20,34 @@
 			<h4 class="text-center">Comptes de Résultats</h4>
 			</div>
 		</div>
+		@if(count($availableDocsArray) > 0)
 		@foreach($availableDocsArray as $year => $values)
 			<div class="row">
 				<div class="col-sm-4">
 				@if($values['bilan'])
 					<p class="text-center"><a href="{{$company->id}}/bilan/{{$year}}" class="btn btn-default btn-rnd">B</a></p>
 				@else
-					<p class="text-center"><a href="#" class="btn btn-primary btn-rnd">Ajouter</a></p>
+					<p class="text-center"><a href="#" class="btn btn-primary btn-rnd"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
 				@endif
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 gradYear">
 					<p class="text-center yearList">{{$year}}</p>
 				</div>
 				<div class="col-sm-4">
 				@if($values['cr'])
 					<p class="text-center"><a href="{{$company->id}}/cr/{{$year}}" class="btn btn-default btn-rnd">CR</a></p>
 				@else
-					<p class="text-center"><a href="#" class="btn btn-primary btn-rnd">Ajouter</a></p>
+					<p class="text-center"><a href="#" class="btn btn-primary btn-rnd"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
 				@endif
 				</div>
 			</div>
 		@endforeach
+		@endif
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+					<h3><button class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter Ann&eacute;e</button></h3>
+				</div>
+			</div>
 	</div>
 </div>
 
@@ -61,6 +68,7 @@
 
 <div class="col-sm-1" id="analysisList">
 	<h3 class="text-center">Estimer</h3>
+	@if(count($availableDocsArray) > 0)
 	@foreach($availableDocsArray as $year => $values)
 		@if($values['analysis'])
 			<a href="{{$company->id}}/analysis/{{$year}}" class="btn btn-success btn-block"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> {{$year}}</a>
@@ -68,5 +76,6 @@
 			<button class="btn btn-default btn-block disabled">{{$year}}</button>
 		@endif
 	@endforeach
+	@endif
 </div>
 @endsection

@@ -49,19 +49,21 @@ class Company extends Model
     }
 
     public function availableDocsArray(){
-        $avDocs = [];
+        $avDocs = null;
         //get first year
         $miny = min($this->bilans->min('year'), $this->crs->min('year'));
         //get last year
         $maxy = max($this->bilans->max('year'), $this->crs->max('year'));
 
-        for($i=$miny; $i <= $maxy; $i++){
-            $this->bilan($i) != null ? $avDocs[$i]['bilan'] = true : $avDocs[$i]['bilan'] = false;
-            $this->cr($i) != null ? $avDocs[$i]['cr'] = true : $avDocs[$i]['cr'] = false;
-            $this->hasB2CR3($i) != null ? $avDocs[$i]['analysis'] = true : $avDocs[$i]['analysis'] = false;
+        if($miny){
+            for($i=$miny; $i <= $maxy; $i++){
+                $this->bilan($i) != null ? $avDocs[$i]['bilan'] = true : $avDocs[$i]['bilan'] = false;
+                $this->cr($i) != null ? $avDocs[$i]['cr'] = true : $avDocs[$i]['cr'] = false;
+                $this->hasB2CR3($i) != null ? $avDocs[$i]['analysis'] = true : $avDocs[$i]['analysis'] = false;
+            }
+        krsort($avDocs);
         }
 
-        krsort($avDocs);
 
         return $avDocs;
     }

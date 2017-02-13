@@ -42,3 +42,10 @@ body{
 	font-size: 20px;
 	margin-top: 20px;
 }
+
+.gradYear {
+	/* webkit example */
+	background-image: -webkit-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,0),rgba(255,255,255,0.4),rgba(255,255,255,0),rgba(255,255,255,0));
+	color : black;
+}
+
