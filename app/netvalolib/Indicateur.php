@@ -98,20 +98,29 @@ class Indicateur
 			$this->year => [
 				'CA' => $this->crN->CA,
 				'EBE' => $this->crN->EBE,
+				'EBEp' => round($this->crN->EBE / $this->crN->CA * 100,1),
 				'Rex' => $this->crN->Rex,
-				'RN' => $this->crN->RN
+				'Rexp' => round($this->crN->Rex / $this->crN->CA * 100,1),
+				'RN' => $this->crN->RN,
+				'RNp' => round($this->crN->RN / $this->crN->CA * 100,1),
 			],
 			$this->year - 1 => [
 				'CA' => $this->crN1->CA,
 				'EBE' => $this->crN1->EBE,
+				'EBEp' => round($this->crN1->EBE / $this->crN1->CA * 100,1),
 				'Rex' => $this->crN1->Rex,
-				'RN' => $this->crN1->RN
+				'Rexp' => round($this->crN1->Rex / $this->crN1->CA * 100,1),
+				'RN' => $this->crN1->RN,
+				'RNp' => round($this->crN1->RN / $this->crN1->CA * 100,1),
 			],
 			$this->year - 2 => [
 				'CA' => $this->crN2->CA,
 				'EBE' => $this->crN2->EBE,
+				'EBEp' => round($this->crN2->EBE / $this->crN2->CA * 100,1),
 				'Rex' => $this->crN2->Rex,
-				'RN' => $this->crN2->RN
+				'Rexp' => round($this->crN2->Rex / $this->crN2->CA * 100,1),
+				'RN' => $this->crN2->RN,
+				'RNp' => round($this->crN2->RN / $this->crN2->CA * 100,1),
 			],
 		];
 	}

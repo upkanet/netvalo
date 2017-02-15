@@ -13,12 +13,12 @@
 </div>
 
 <div class="col-sm-1" id="companiesList">
-	<h3 class="text-center">NetValo</h3>
+	<h4 class="text-center">NetValo</h4>
 	@foreach(Auth::user()->companies as $cmp)
 		@if($cmp->id == $company->id)
-		<a class="btn btn-success btn-block companyBtn" href="{{url('/companies/'.$cmp->id)}}">
+		<a class="btn btn-success btn-block btn-sm companyBtn" href="{{url('/companies/'.$cmp->id)}}">
 		@else
-		<a class="btn btn-default btn-block companyBtn" href="{{url('/companies/'.$cmp->id)}}">
+		<a class="btn btn-default btn-block btn-sm companyBtn" href="{{url('/companies/'.$cmp->id)}}">
 		@endif
 			<span class="glyphicon glyphicon-knight" aria-hidden="true"></span><br>{{ $cmp->name }}
 		</a>
@@ -28,7 +28,7 @@
 </div>
 
 <div class="col-sm-1" id="analysisList">
-	<h3 class="text-center">Estimer</h3>
+	<h4 class="text-center">Estimer</h4>
 	@php $oneAnalysis = false; @endphp
 	@if(count($company->availableDocsArray()) > 0)
 	@foreach($company->availableDocsArray() as $year => $values)

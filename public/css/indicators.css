@@ -25,3 +25,15 @@
 	color: white;
 	border: black;
 }
+
+.indic-positive {
+	color: #4CAF50;
+}
+
+.indic-negative {
+	color: #E51C23;
+}
+
+.indic-avg {
+	color: black;
+}
