@@ -65,6 +65,42 @@ class Valo
 		return $result;
 	}
 
+	private function mapDS($ds_val, $n){
+		return intval($ds_val >= $n);
+	}
+
+	private function planeDataset($ds, $n){
+		return array_map(array($this,'mapDS'),$ds,[$n,$n,$n,$n,$n,$n,$n,$n,$n,$n]);
+	}
+
+	public function graphDatasets(){
+		$valos = $this->list();
+		$ds = [0,0,0,0,0,0,0,0,0,0];
+		$minValo = min($valos);
+		$maxValo = max($valos);
+		$delta = ($maxValo - $minValo)/10;
+		foreach ($valos as $valo) {
+			for($n=0;$n<10;$n++){
+				if(($valo >= ($minValo + $n * $delta)) && ($valo < ($minValo + ($n + 1) * $delta + 1))){
+					$ds[$n] += 1;
+				}
+			}
+		}
+		$str_ds = "[";
+		$alpha = 1;
+		for($n=1;$n<=8;$n++){
+			$str_ds .= '{
+							backgroundColor: "rgba(33,150,243,' . $alpha . ')",
+							data: ';
+			$str_ds .= '['.implode(',', $this->planeDataset($ds,$n)).']';
+			$str_ds .= '},';
+			$alpha -= 1/8;
+		}
+		$str_ds = substr($str_ds,0,-1)."]";
+
+		return $str_ds;
+	}
+
 	public function fourchette(){
 		$l = $this->list();
 		$sd = round(stddev($l));

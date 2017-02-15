@@ -46,6 +46,3 @@
 	<div class="col-sm-3 text-right">{{$indic->Renta3()[$indic->year - 1]['RNp']}}%</div>
 	<div class="col-sm-3 text-right">{{$indic->Renta3()[$indic->year]['RNp']}}%</div>
 </div>
-<div class="row indic-table-footer">
-	<div class="col-sm-12">&nbsp;</div>
-</div>

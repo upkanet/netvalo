@@ -16,73 +16,18 @@
 @section('middle')
 <div class="container-fluid">
 	<div class="row"><h2>{{$company->name}}</h2></div>
-	<div class="row" id="navIndic">
-		<ul class="nav nav-tabs nav-justified">
-			<li role="presentation" class="active"><a href="#">Rentabilit&eacute;</a></li>
-			<li role="presentation"><a href="#">Autofinancement</a></li>
-			<li role="presentation"><a href="#">Valorisation</a></li>
+	<div class="row">
+		<ul class="nav nav-pills">
+			<li role="presentation"><a data-toggle="pill" href="#indic-valo">Valorisation</a></li>
+			<li role="presentation"><a data-toggle="pill" href="#indic-croiss_rent">Croissance Rentable ?</a></li>
+			<li role="presentation"><a data-toggle="pill" href="#indic-croiss_autof">Croissance Autofinanc&eacute;e ?</a></li>
 		</ul>
 	</div>
-	<div class="container-fluid" id="contentIndic">
-		<div class="row">
-			<div class="col-sm-6">
-				<br>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Bilan Fonctionnel</h3>
-					</div>
-					<div class="panel-body">
-						@include('indicators.actifeco')
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<br>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Matrice BCG</h3>
-					</div>
-					<div class="panel-body">
-						@include('indicators.bcg')
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Evolution du CA</h3>
-					</div>
-					<div class="panel-body">
-						@include('indicators.ca3')
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<br>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Indicateurs</h3>
-					</div>
-					<div class="panel-body">
-						@include('indicators.3main')
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-5">
-				<br>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Rentabilit&eacute;</h3>
-					</div>
-					<div class="panel-body">
-						@include('indicators.renta')
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="tab-content">
+		<div id="indic-load" class="tab-pane fade in active">Calculs en cours...</div>
+		<div id="indic-valo" class="tab-pane fade">@include('indicators.valo')</div>
+		<div id="indic-croiss_rent" class="tab-pane fade">@include('indicators.croiss_rent')</div>
+		<div id="indic-croiss_autof" class="tab-pane fade">@include('indicators.croiss_autof')</div>
 	</div>
 </div>
 @endsection

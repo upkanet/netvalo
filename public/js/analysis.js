@@ -1,3 +1,4 @@
+//Chart evolution CA
 var ctx = $("#CA3ChartCanvas");
 var ca3options = {
         legend: {
@@ -27,4 +28,33 @@ new Chart(ctx,{
 	type: 'bar',
 	data: CA3Data,
 	options: ca3options
+});
+
+//Chargement de valo
+function loadingValo(){
+    $('.nav-pills a[href="#indic-valo"]').tab('show');
+}
+
+setTimeout(loadingValo, 0);
+
+//Chart valorisations
+var valoCtx = $("#valoCanvas");
+var valoCoptions = {
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero:true
+                    }
+            }]
+        }
+    };
+
+new Chart(valoCtx,{
+    type: 'bar',
+    data: valoData,
+    options: valoCoptions
 });
