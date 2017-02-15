@@ -31,11 +31,30 @@ new Chart(ctx,{
 });
 
 //Chargement de valo
+function progBarValo(p){
+    $('#progBarValo').css('width', p+'%').attr('aria-valuenow',p);
+}
+
+function pBV1(){
+    progBarValo(40);
+}
+
+function pBV2(){
+    progBarValo(80);
+}
+
+function pBV3(){
+    progBarValo(100);
+}
+
 function loadingValo(){
     $('.nav-pills a[href="#indic-valo"]').tab('show');
 }
 
-setTimeout(loadingValo, 0);
+setTimeout(pBV1, 1000);
+setTimeout(pBV2, 2000);
+setTimeout(pBV3, 2800);
+setTimeout(loadingValo, 3000);
 
 //Chart valorisations
 var valoCtx = $("#valoCanvas");
@@ -46,10 +65,19 @@ var valoCoptions = {
         scales: {
             yAxes: [{
                 stacked: true,
+                display: false,
                 ticks: {
-                    beginAtZero:true
-                    }
+                    min: 0
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false
+                }
             }]
+        },
+        tooltips: {
+            enabled: false
         }
     };
 

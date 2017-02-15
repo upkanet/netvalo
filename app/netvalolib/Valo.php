@@ -94,7 +94,7 @@ class Valo
 							data: ';
 			$str_ds .= '['.implode(',', $this->planeDataset($ds,$n)).']';
 			$str_ds .= '},';
-			$alpha -= 1/8;
+			$alpha -= 0.17;
 		}
 		$str_ds = substr($str_ds,0,-1)."]";
 
@@ -109,7 +109,6 @@ class Valo
 		array_pop($l);
 		$sum = array_sum($l);
 		$average = round($sum / count($l));
-		print_r($sd);
 
 		return [
 			'low' => round($average - $sd / 2),

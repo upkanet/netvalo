@@ -24,7 +24,7 @@
 		</ul>
 	</div>
 	<div class="tab-content">
-		<div id="indic-load" class="tab-pane fade in active">Calculs en cours...</div>
+		<div id="indic-load" class="tab-pane fade in active">@include('indicators.loading')</div>
 		<div id="indic-valo" class="tab-pane fade">@include('indicators.valo')</div>
 		<div id="indic-croiss_rent" class="tab-pane fade">@include('indicators.croiss_rent')</div>
 		<div id="indic-croiss_autof" class="tab-pane fade">@include('indicators.croiss_autof')</div>
