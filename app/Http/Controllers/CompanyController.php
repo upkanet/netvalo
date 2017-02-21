@@ -50,8 +50,15 @@ class CompanyController extends Controller
     public function show($id)
     {
         $company = Company::find($id);
+        $possibleNewYears = [];
+        $currentYear = date("Y");
+        for($i=0;$i<10;$i++){
+            if(!$company->hasYear($currentYear - $i)){
+                $possibleNewYears[] = $currentYear - $i;
+            }
+        }
 
-        return view('company', compact('company'));
+        return view('company', compact('company','possibleNewYears'));
     }
 
     /**

@@ -2,9 +2,15 @@
 
 @section('title',$company->name)
 
+@section('js')
+@parent
+<script src="{{url('/js/company.js')}}"></script>
+@endsection
+
+
 @section('middle')
 <div class="container">
-	<div class="col-sm-12"><h2>{{$company->name}}</h2></div>
+	<div class="col-sm-12"><h2>{{$company->name}}</h2><input type="hidden" id="companyIdInput" value="{{ $company->id }}"></div>
 	<div class="row">
 		<div class="col-sm-4">
 		<h4 class="text-center">Bilans</h4>
@@ -20,7 +26,7 @@
 		@if($values['bilan'])
 			<p class="text-center"><a href="{{$company->id}}/bilan/{{$year}}" class="btn btn-default btn-rnd">B</a></p>
 		@else
-			<p class="text-center"><a href="#" class="btn btn-primary btn-rnd"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
+			<p class="text-center"><a href="../bilans/create?company={{$company->id}}&year={{$year}}" class="btn btn-primary btn-rnd"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
 		@endif
 		</div>
 		<div class="col-sm-4 gradYear">
@@ -30,16 +36,41 @@
 		@if($values['cr'])
 			<p class="text-center"><a href="{{$company->id}}/cr/{{$year}}" class="btn btn-default btn-rnd">CR</a></p>
 		@else
-			<p class="text-center"><a href="#" class="btn btn-primary btn-rnd"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
+			<p class="text-center"><a href="../crs/create?company={{$company->id}}&year={{$year}}" class="btn btn-primary btn-rnd"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
 		@endif
 		</div>
 	</div>
 	@endforeach
 	@endif
+	<div class="row" id="addYear">
+		
+	</div>
+	<div class="row collapse" id="selectYear">
+		<div class="col-sm-4 col-sm-offset-4">
+			<div class="panel panel-primary">
+				<div class="panel-body">
+					<form class="form-inline">
+						<p>S&eacute;lectionnez une ann&eacute;e</p>
+						<div class="form-group text-center">
+							<select class="form-control input-lg" id="selectYearInput">
+								@foreach($possibleNewYears as $y)
+									<option>{{ $y }}</option>
+								@endforeach
+							</select>
+							<a class="btn btn-success" onclick="selectYear()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Ajouter</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4">
-			<h3><button class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter Ann&eacute;e</button></h3>
+			<h3><button class="btn btn-primary btn-block" data-toggle="collapse" data-target="#selectYear"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter Ann&eacute;e</button></h3>
 		</div>
+	</div>
+	<div class="row" id="addYearRow">
+		
 	</div>
 </div>
 @endsection

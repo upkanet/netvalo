@@ -29,7 +29,14 @@ class BilanController extends Controller
      */
     public function create()
     {
-        //
+        $year = $_GET['year'];
+        $company = Company::find($_GET['company']);
+        $fields = config('balance_fields.bilan_fields');
+        $slice = 34;
+        $fields_actif = array_slice($fields,0,$slice);
+        $fields_passif = array_slice($fields,$slice);
+
+        return view('resources.bilans.create', compact('company','year','fields_actif','fields_passif'));
     }
 
     /**

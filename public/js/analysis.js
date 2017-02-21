@@ -51,10 +51,10 @@ function loadingValo(){
     $('.nav-pills a[href="#indic-valo"]').tab('show');
 }
 
-/*setTimeout(pBV1, 1000);
+setTimeout(pBV1, 1000);
 setTimeout(pBV2, 2000);
 setTimeout(pBV3, 2800);
-setTimeout(loadingValo, 3000);*/
+setTimeout(loadingValo, 3000);
 
 //Chart valorisations
 var valoCtx = $("#valoCanvas");

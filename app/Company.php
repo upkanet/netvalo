@@ -31,6 +31,10 @@ class Company extends Model
         return $this->crs()->where('year', $year)->first();
     }
 
+    public function hasYear($year){
+        return ($this->bilan($year) !== null) || ($this->cr($year) !== null);
+    }
+
     public function hasB2CR3($year){
         return ($this->bilan($year) !== null) && ($this->bilan($year-1) !== null) && ($this->cr($year) !== null) && ($this->cr($year-1) !== null)  && ($this->cr($year-2) !== null);
     }
