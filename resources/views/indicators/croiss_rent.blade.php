@@ -6,7 +6,7 @@
 				<h3 class="panel-title">Bilan Fonctionnel</h3>
 			</div>
 			<div class="panel-body">
-				@include('indicators.actifeco')
+				@include('indicators.croiss_rent.actifeco')
 			</div>
 		</div>
 	</div>
@@ -17,7 +17,7 @@
 				<h3 class="panel-title">Matrice BCG</h3>
 			</div>
 			<div class="panel-body">
-				@include('indicators.bcg')
+				@include('indicators.croiss_rent.bcg')
 			</div>
 		</div>
 	</div>
@@ -28,7 +28,7 @@
 				<h3 class="panel-title">Indicateurs</h3>
 			</div>
 			<div class="panel-body">
-				@include('indicators.3main')
+				@include('indicators.croiss_rent.3main')
 			</div>
 		</div>
 	</div>
@@ -40,7 +40,7 @@
 				<h3 class="panel-title">Evolution du CA</h3>
 			</div>
 			<div class="panel-body">
-				@include('indicators.ca3')
+				@include('indicators.croiss_rent.ca3')
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 				<h3 class="panel-title">Rentabilit&eacute;</h3>
 			</div>
 			<div class="panel-body">
-				@include('indicators.renta')
+				@include('indicators.croiss_rent.renta')
 			</div>
 		</div>
 	</div>
