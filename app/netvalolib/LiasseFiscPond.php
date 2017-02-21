@@ -53,8 +53,16 @@ class LiasseFiscPond
 		return $this->pondCRval('CAF');
 	}
 
+	public function CAGR(){
+		return round((sqrt($this->crN->CA / $this->crN2->CA) - 1) * 100, 2);
+	}
+
 	public function endtLT(){
 		return $this->bilanN->DetteFi;
+	}
+
+	public function BFRLT(){
+		return $this->bilanN->BFR;
 	}
 
 	public function trezLT(){

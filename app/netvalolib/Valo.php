@@ -54,8 +54,13 @@ class Valo
 		return $cap_emprunt + $app_necess;
 	}
 
+	//Methode NetValo
+	public function val_netvalo($nb_year = 5){
+		return ($this->lfpond->Rex() - $this->lfpond->BFRLT()) * ((1+$this->lfpond->CAGR()) ** ($nb_year + 1) - 1) / $this->lfpond->CAGR();
+	}
+
 	public function list(){
-		$methodes = ['val_patri', 'val_prod', 'cap_rn', 'cap_ebe_corr', 'cap_caf', 'cap_caf_trez', 'cap_risque', 'val_caf_pret'];
+		$methodes = ['val_patri', 'val_prod', 'cap_rn', 'cap_ebe_corr', 'cap_caf', 'cap_caf_trez', 'cap_risque', 'val_caf_pret', 'val_netvalo'];
 		$result = [];
 
 		foreach($methodes as $methode){
