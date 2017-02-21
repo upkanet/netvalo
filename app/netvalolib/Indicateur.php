@@ -139,5 +139,31 @@ class Indicateur
 		];
 	}
 
+	//Evolution du BFR
+	public function evoBFR(){
+		return [
+			$this->year => toMoisCA($this->bilanN->BFR, $this->crN->CA),
+			$this->year - 1 => toMoisCA($this->bilanN1->BFR, $this->crN1->CA),
+		];
+	}
+
+	//Details du BFR
+	public function detailsBFR(){
+		return [
+			'stocks' => toMoisCA($this->bilanN->Stocks, $this->crN->CA),
+			'clients' => toMoisCA($this->bilanN->CreancesExploit, $this->crN->CA),
+			'fournisseurs' => toMoisCA($this->bilanN->DettesExploit, $this->crN->CA),
+			'BFR' => toMoisCA($this->bilanN->BFR, $this->crN->CA),
+		];
+	}
+
+	public function evoDetailsBFR(){
+		return [
+			'stocks' => pourcEvo($this->bilanN->Stocks, $this->bilanN1->Stocks),
+			'clients' => pourcEvo($this->bilanN->CreancesExploit, $this->bilanN1->CreancesExploit),
+			'fournisseurs' => pourcEvo($this->bilanN->DettesExploit, $this->bilanN1->DettesExploit),
+			'BFR' => pourcEvo($this->bilanN->BFR, $this->bilanN1->BFR),
+		];
+	}
 
 }

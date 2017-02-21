@@ -51,10 +51,10 @@ function loadingValo(){
     $('.nav-pills a[href="#indic-valo"]').tab('show');
 }
 
-setTimeout(pBV1, 1000);
+/*setTimeout(pBV1, 1000);
 setTimeout(pBV2, 2000);
 setTimeout(pBV3, 2800);
-setTimeout(loadingValo, 3000);
+setTimeout(loadingValo, 3000);*/
 
 //Chart valorisations
 var valoCtx = $("#valoCanvas");
@@ -85,4 +85,25 @@ new Chart(valoCtx,{
     type: 'bar',
     data: valoData,
     options: valoCoptions
+});
+
+//Chart BFR
+var evoBFRctx = $("#evoBFRCanvas");
+var evoBFRoptions = {
+        legend: {
+            display: false
+        },
+        tooltips: {
+            enabled: true,
+            callbacks:{
+                label: function(tooltipItems, data){
+                    return tooltipItems.yLabel + ' mois';
+                }
+            }
+        }
+    };
+new Chart(evoBFRctx,{
+    type: 'bar',
+    data: evoBFRData,
+    options: evoBFRoptions
 });
