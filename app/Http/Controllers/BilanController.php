@@ -35,8 +35,9 @@ class BilanController extends Controller
         $slice = 34;
         $fields_actif = array_slice($fields,0,$slice);
         $fields_passif = array_slice($fields,$slice);
+        $ss_tots = config('balance_fields.bilan_ss_tot');
 
-        return view('resources.bilans.create', compact('company','year','fields_actif','fields_passif'));
+        return view('resources.bilans.create', compact('company','year','fields_actif','fields_passif','ss_tots'));
     }
 
     /**

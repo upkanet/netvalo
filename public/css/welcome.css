@@ -11,6 +11,7 @@ html{
 
 	/* The Magic */
 	background-size:cover;
+    background-attachment: fixed;
 }
 
 #footer{
