@@ -48,7 +48,7 @@ class BilanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        print_r($_POST);
     }
 
     /**

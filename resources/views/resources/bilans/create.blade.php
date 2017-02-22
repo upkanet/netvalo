@@ -14,10 +14,13 @@
 @section('middle')
 <h3>{{$company->name}} - Ajouter le Bilan {{$year}}</h3>
 <div class="container">
-	<form>
+	<form action="{{ route('bilans.store') }}" method="POST" role="form" data-toggle="validator">
+	{{ csrf_field() }}
+	<input type="hidden" name="company_id" value="{{$company->id}}">
+	<input type="hidden" name="year" value="{{$year}}">
 		<div class="row">
 			<div class="col-sm-12">
-				<button class="btn btn-primary btn-block btn-lg">Envoyer</button>
+				<button class="btn btn-primary btn-block btn-lg" type="submit">Envoyer</button>
 				<br>
 			</div>
 		</div>
@@ -38,7 +41,7 @@
 									<td>{{$field_name}}</td>
 									<td>
 										<div class="input-group">
-											<input type="text" class="form-control input-sm input-bilan" name="{{$field_key}}" placeholder="0">
+											<input type="number" class="form-control input-sm input-bilan" name="{{$field_key}}" placeholder="0">
 											<div class="input-group-addon input-sm">&euro;</div>
 										</div>
 									</td>
@@ -46,7 +49,7 @@
 								@if($i==18)
 									<tr class="success"><td><strong>Total Actif Immobilis&eacute;</strong></td><td>
 										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="actif_imm" placeholder="0" readonly="true">
+											<input type="number" class="form-control input-sm" id="actif_imm" placeholder="0" readonly="true">
 											<div class="input-group-addon input-sm">&euro;</div>
 										</div>
 									</td></tr>
@@ -87,7 +90,7 @@
 									<td>{{$field_name}}</td>
 									<td>
 										<div class="input-group">
-											<input type="text" class="form-control input-sm input-bilan" name="{{$field_key}}" placeholder="0">
+											<input type="number" class="form-control input-sm input-bilan" name="{{$field_key}}" placeholder="0">
 											<div class="input-group-addon input-sm">&euro;</div>
 										</div>
 									</td>
