@@ -12,16 +12,12 @@ function sig(field){
 	return ret;
 }
 
-sig('actif_imm');
-
 function updateSIG(){
-	var listSIG = ['actif_imm','actif_circ','actif','capitaux_propres','autres_fds_propres','prov_rc','tot_4','passif'];
-
 	listSIG.forEach(function(tot){
 		$("#"+tot).val(sig(tot));
 	});
 }
 
 $(document).ready(function(){
-	$('.input-bilan').change(updateSIG);
+	$('.input-bilancr').change(updateSIG);
 });

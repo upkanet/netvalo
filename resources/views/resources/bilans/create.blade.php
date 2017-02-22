@@ -6,6 +6,7 @@
 @parent
 <script type="text/javascript">
 	var ss_tots = {!!json_encode($ss_tots)!!};
+	var listSIG = ['actif_imm','actif_circ','actif','capitaux_propres','autres_fds_propres','prov_rc','tot_4','passif'];
 </script>
 <script src="{{url('/js/liassefisc.js')}}"></script>
 @endsection
@@ -40,34 +41,26 @@
 								<tr @if($i==0) class="success" @endif>
 									<td>{{$field_name}}</td>
 									<td>
-										<div class="input-group">
-											<input type="number" class="form-control input-sm input-bilan" name="{{$field_key}}" placeholder="0">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input') {{$field_key}}
+										@endcomponent
 									</td>
 								</tr>
 								@if($i==18)
 									<tr class="success"><td><strong>Total Actif Immobilis&eacute;</strong></td><td>
-										<div class="input-group">
-											<input type="number" class="form-control input-sm" id="actif_imm" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') actif_imm
+										@endcomponent
 									</td></tr>
 								@elseif($i==30)
 									<tr class="success"><td><strong>Total Actif Circulant</strong></td><td>
-										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="actif_circ" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') actif_circ
+										@endcomponent
 									</td></tr>
 								@endif
 								@php $i++; @endphp
 							@endforeach
 									<tr class="danger"><td><strong>Total Actif</strong></td><td>
-										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="actif" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') actif
+										@endcomponent
 									</td></tr>
 							</tbody>
 						</table>
@@ -89,48 +82,36 @@
 								<tr>
 									<td>{{$field_name}}</td>
 									<td>
-										<div class="input-group">
-											<input type="number" class="form-control input-sm input-bilan" name="{{$field_key}}" placeholder="0">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input') {{$field_key}}
+										@endcomponent
 									</td>
 								</tr>
 								@if($i==10)
 									<tr class="success"><td><strong>Total Capitaux Propres</strong></td><td>
-										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="capitaux_propres" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') capitaux_propres
+										@endcomponent
 									</td></tr>
 								@elseif($i==12)
 									<tr class="success"><td><strong>Autres Fonds Propres</strong></td><td>
-										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="autres_fds_propres" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') autres_fds_propres
+										@endcomponent
 									</td></tr>
 								@elseif($i==14)
 									<tr class="success"><td><strong>Provisions pour Risques et Charges</strong></td><td>
-										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="prov_rc" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') prov_rc
+										@endcomponent
 									</td></tr>
 								@elseif($i==24)
 									<tr class="success"><td><strong>Total (IV)</strong></td><td>
-										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="tot_4" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') tot_4
+										@endcomponent
 									</td></tr>
 								@endif
 								@php $i++; @endphp
 							@endforeach
 							<tr class="danger"><td><strong>Total Passif</strong></td><td>
-										<div class="input-group">
-											<input type="text" class="form-control input-sm" id="passif" placeholder="0" readonly="true">
-											<div class="input-group-addon input-sm">&euro;</div>
-										</div>
+										@component('inc.currency_input_readonly') passif
+										@endcomponent
 									</td></tr>
 							</tbody>
 						</table>

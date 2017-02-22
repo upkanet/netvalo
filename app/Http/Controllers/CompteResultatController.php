@@ -29,7 +29,12 @@ class CompteResultatController extends Controller
      */
     public function create()
     {
-        //
+        $year = $_GET['year'];
+        $company = Company::find($_GET['company']);
+        $fields = config('balance_fields.cr_fields');
+        $ss_tots = config('balance_fields.cr_ss_tot');
+
+        return view('resources.crs.create', compact('company','year','fields','ss_tots'));
     }
 
     /**
