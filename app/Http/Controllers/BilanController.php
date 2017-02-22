@@ -54,7 +54,7 @@ class BilanController extends Controller
         //Champs numeriques
         $fields = config('balance_fields.bilan_fields');
         foreach ($fields as $field => $field_name) {
-            $bilan->$field = $request->input($field);
+            $bilan->$field = ($request->input($field) !== null) ? $request->input($field) : 0;
         }
 
         $bilan->save();

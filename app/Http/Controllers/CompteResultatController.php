@@ -45,7 +45,17 @@ class CompteResultatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cr = new CR;
+        $cr->company_id = $request->input('company_id');
+        $cr->year = $request->input('year');
+        //Champs numeriques
+        $fields = config('balance_fields.cr_fields');
+        foreach ($fields as $field => $field_name) {
+            $cr->$field = ($request->input($field) !== null) ? $request->input($field) : 0;
+        }
+
+        $cr->save();
+        return "store";
     }
 
     /**

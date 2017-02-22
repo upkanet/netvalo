@@ -13,7 +13,7 @@
 </div>
 
 <div class="col-sm-1" id="companiesList">
-	<h4 class="text-center">NetValo</h4>
+	<h4 class="text-center"><img src="{{url('img/logo.png')}}" width="100%"></h4>
 	@foreach(Auth::user()->companies as $cmp)
 		@if($cmp->id == $company->id)
 		<a class="btn btn-success btn-block btn-sm companyBtn" href="{{url('/companies/'.$cmp->id)}}">
