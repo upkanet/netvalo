@@ -48,7 +48,17 @@ class BilanController extends Controller
      */
     public function store(Request $request)
     {
-        print_r($_POST);
+        $bilan = new Bilan;
+        $bilan->company_id = $request->input('company_id');
+        $bilan->year = $request->input('year');
+        //Champs numeriques
+        $fields = config('balance_fields.bilan_fields');
+        foreach ($fields as $field => $field_name) {
+            $bilan->$field = $request->input($field);
+        }
+
+        $bilan->save();
+        return "store";
     }
 
     /**
