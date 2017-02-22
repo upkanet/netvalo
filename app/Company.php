@@ -42,9 +42,9 @@ class Company extends Model
     public function availableDocsArray(){
         $avDocs = null;
         //get first year
-        $miny = min($this->bilans->min('year'), $this->crs->min('year'));
+        $miny = min($this->bilans->min('year') ?: PHP_INT_MAX, $this->crs->min('year') ?: PHP_INT_MAX);
         //get last year
-        $maxy = max($this->bilans->max('year'), $this->crs->max('year'));
+        $maxy = max($this->bilans->max('year') ?: PHP_INT_MIN, $this->crs->max('year') ?: PHP_INT_MIN);
 
         if($miny){
             for($i=$miny; $i <= $maxy; $i++){
