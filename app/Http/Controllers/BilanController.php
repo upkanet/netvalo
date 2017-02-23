@@ -15,11 +15,7 @@ class BilanController extends Controller
      */
     public function index()
     {
-        /*$user = User::find(1);
-        foreach ($user->bilans as $bilan) {
-            $bilan->year;
-        }*/
-        return 'Bilan';
+        //
     }
 
     /**

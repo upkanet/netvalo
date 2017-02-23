@@ -15,11 +15,7 @@ class CompteResultatController extends Controller
      */
     public function index()
     {
-        $toto = array_keys(config('balance_fields.cr_fields'));
-        foreach ($toto as $field) {
-            print_r($field);
-        }
-        return "CR";
+        //
     }
 
     /**
@@ -55,7 +51,7 @@ class CompteResultatController extends Controller
         }
 
         $cr->save();
-        return "store";
+        return redirect()->route('companies.show',$cr->company);
     }
 
     /**
@@ -71,23 +67,8 @@ class CompteResultatController extends Controller
 
         $fields = config('balance_fields.cr_fields');
         $ss_tots = config('balance_fields.cr_ss_tot');
-        foreach ($ss_tots as $ss_tot_key => $ss_tot_value) {
-            print_r('SIG '.$ss_tot_key.' : '.$cr->sig($ss_tot_key).'<br>');
-        }
-        print_r('<hr>CA : '.$cr->CA.'<hr>');
-        print_r('<hr>MargeComm : '.$cr->MargeComm.'<hr>');
-        print_r('<hr>ProdExe : '.$cr->ProdExe.'<hr>');
-        print_r('<hr>MargeProd : '.$cr->MargeProd.'<hr>');
-        print_r('<hr>MargeGlob : '.$cr->MargeGlob.'<hr>');
-        print_r('<hr>VA : '.$cr->VA.'<hr>');
-        print_r('<hr>EBE : '.$cr->EBE.'<hr>');
-        print_r('<hr>Rex : '.$cr->Rex.'<hr>');
-        print_r('<hr>Rfi : '.$cr->Rfi.'<hr>');
-        print_r('<hr>RCAI : '.$cr->RCAI.'<hr>');
-        print_r('<hr>Rexcep : '.$cr->Rexcep.'<hr>');
-        print_r('<hr>RN : '.$cr->RN.'<hr>');
-        print_r('<hr>CAF : '.$cr->CAF.'<hr>');
-        return view('cr', compact('cr','company','fields'));
+
+        return view('resources.cr-form', compact('cr','company','year','fields','ss_tots'));
     }
 
     /**
@@ -110,7 +91,14 @@ class CompteResultatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cr = CR::find($id);
+        //Champs numeriques
+        $fields = config('balance_fields.cr_fields');
+        foreach ($fields as $field => $field_name) {
+            $cr->$field = ($request->input($field) !== null) ? $request->input($field) : 0;
+        }
+        $cr->save();
+        return redirect()->route('companies.show',$cr->company);
     }
 
     /**
@@ -121,6 +109,7 @@ class CompteResultatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cr = CR::find($id);
+        $cr->delete();
     }
 }

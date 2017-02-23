@@ -13,7 +13,7 @@
 
 
 @section('middle')
-<h3>{{$company->name}} - Ajouter le Bilan {{$year}}</h3>
+<h3>{{$company->name}} - @if(isset($bilan)) Modifier @else Ajouter @endif le Bilan {{$year}}</h3>
 <div class="container">
 	@if(isset($bilan))
 	<form action="{{ route('bilans.update',$bilan) }}" method="POST" role="form" data-toggle="validator">

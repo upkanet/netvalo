@@ -35,6 +35,28 @@ function updateSIG(){
 	}
 }
 
+function deleteBilanCR(){
+	if(confirm('Supprimer ?')){
+		console.log('SEND delete (token:' + csrf_token + ') to ' + deleteBilanCRroute);
+		destroyBilanCR();
+	}
+}
+
+function destroyBilanCR(){
+	$.ajax({
+		url: deleteBilanCRroute,
+		type: 'post',
+		data: {
+			_method: 'delete',
+			_token: csrf_token
+		},
+		success: function(result){
+			window.location.href = companyRoute;
+		}
+	});
+}
+
 $(document).ready(function(){
 	$('.input-bilancr').change(updateSIG);
+	$('#deleteBilanCRbtn').click(deleteBilanCR);
 });
