@@ -35,10 +35,10 @@
 	<input type="hidden" name="user_id" value="{{Auth::id()}}">
 	<h2>@if(isset($company)) Modifier {{$company->name}} @else Ajouter une entreprise @endif</h2>
 	<div class="row">
-			<div class="col-sm-9">
+			<div class="col-lg-9 col-sm-6">
 				<button class="btn btn-primary btn-block btn-lg" type="submit">Envoyer</button>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-lg-3 col-sm-6">
 				<a class="btn btn-default btn-lg" href="{{url('/home')}}">Retour</a>
 				@if(isset($company))
 				<a class="btn btn-danger btn-lg" id="deleteCompanybtn" data-token="{{ csrf_token()}}">Supprimer</a>
