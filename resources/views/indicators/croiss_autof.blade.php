@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-sm-5">
+	<div class="col-lg-5 col-lg-offset-1 col-sm-6">
 		<br>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -10,7 +10,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-lg-5 col-sm-6">
 		<br>
 		<div class="panel panel-primary">
 			<div class="panel-heading">

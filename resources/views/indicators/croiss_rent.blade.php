@@ -1,6 +1,6 @@
 <br>
 <div class="row">
-	<div class="col-sm-3">
+	<div class="col-lg-3 col-sm-6">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Indicateurs</h3>
@@ -10,7 +10,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-lg-4 col-sm-6">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Matrice BCG</h3>
@@ -22,7 +22,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-7">
+	<div class="col-lg-5 col-sm-6">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Evolution du CA</h3>
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-5">
+	<div class="col-lg-5 col-lg-offset-1 col-sm-6">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Rentabilit&eacute;</h3>
