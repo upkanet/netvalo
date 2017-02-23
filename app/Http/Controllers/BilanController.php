@@ -37,7 +37,7 @@ class BilanController extends Controller
         $fields_passif = array_slice($fields,$slice);
         $ss_tots = config('balance_fields.bilan_ss_tot');
 
-        return view('resources.bilans.create', compact('company','year','fields_actif','fields_passif','ss_tots'));
+        return view('resources.bilan-form', compact('company','year','fields_actif','fields_passif','ss_tots'));
     }
 
     /**

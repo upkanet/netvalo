@@ -1,6 +1,6 @@
 @extends('layouts.comp')
 
-@section('title',$company->name .' - Ajouter un Bilan')
+@section('title',$company->name .' - Ajouter un CR')
 
 @section('js')
 @parent

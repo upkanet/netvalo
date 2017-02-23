@@ -34,7 +34,7 @@ class CompteResultatController extends Controller
         $fields = config('balance_fields.cr_fields');
         $ss_tots = config('balance_fields.cr_ss_tot');
 
-        return view('resources.crs.create', compact('company','year','fields','ss_tots'));
+        return view('resources.cr-form', compact('company','year','fields','ss_tots'));
     }
 
     /**
