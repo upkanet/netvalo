@@ -115,6 +115,7 @@ class BilanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bilan = Bilan::find($id);
+        $bilan->delete();
     }
 }

@@ -7,6 +7,11 @@
 <script type="text/javascript">
 	var ss_tots = {!!json_encode($ss_tots)!!};
 	var listSIG = ['actif_imm','actif_circ','actif','capitaux_propres','autres_fds_propres','prov_rc','tot_4','passif'];
+	@if(isset($bilan))
+	var deleteBilanCRroute = "{{route('bilans.destroy',$bilan)}}";
+	var companyRoute = "{{route('companies.show',$company)}}";
+	var csrf_token = $('#deleteBilanCRbtn').data('token');
+	@endif
 </script>
 <script src="{{url('/js/liassefisc.js')}}"></script>
 @endsection
@@ -25,11 +30,17 @@
 	<input type="hidden" name="company_id" value="{{$company->id}}">
 	<input type="hidden" name="year" value="{{$year}}">
 		<div class="row">
-			<div class="col-sm-12">
-				<button class="btn btn-primary btn-block btn-lg" type="submit">Envoyer</button>
-				<br>
+			<div class="col-sm-9">
+				<button class="btn btn-primary btn-block btn-lg">Envoyer</button>
+			</div>
+			<div class="col-sm-3">
+				<a class="btn btn-default btn-lg" href="{{route('companies.show',$company)}}">Retour</a>
+				@if(isset($bilan))
+				<a class="btn btn-danger btn-lg" id="deleteBilanCRbtn" data-token="{{ csrf_token()}}">Supprimer</a>
+				@endif
 			</div>
 		</div>
+		<br>
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="panel panel-primary">
