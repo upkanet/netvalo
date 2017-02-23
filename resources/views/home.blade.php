@@ -24,7 +24,7 @@
     <div class="row">
         <h4>Vos entreprises</h4>
         @foreach ($companies as $company)
-        <div class="col-sm-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="panel panel-primary"> 
                 <div class="panel-heading text-center"><span class="glyphicon glyphicon-knight" aria-hidden="true"></span> {{$company->name}}</div>
                 <div class="panel-body text-center">
@@ -38,7 +38,7 @@
             </div>
         </div>
         @endforeach
-        <div class="col-sm-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="panel panel-primary"> 
                 <div class="panel-body"> <a href="{{route('companies.create')}}" class="btn btn-warning btn-block"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter une entreprise </a></div>
             </div>

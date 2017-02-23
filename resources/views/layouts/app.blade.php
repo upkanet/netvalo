@@ -34,6 +34,10 @@
 <div id="footer">
     @section('footer')
     <p class="text-center">2017 &copy; NetValo</p>
+    <div class="visible-xs-block text-center">xs</div>
+    <div class="visible-sm-block text-center">sm</div>
+    <div class="visible-md-block text-center">md</div>
+    <div class="visible-lg-block text-center">lg</div>
     @show
 </div>
 
