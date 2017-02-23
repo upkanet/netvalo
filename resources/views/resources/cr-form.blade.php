@@ -31,7 +31,7 @@
 	<input type="hidden" name="year" value="{{$year}}">
 		<div class="row">
 			<div class="col-sm-9">
-				<button class="btn btn-primary btn-block btn-lg">Envoyer</button>
+				<button class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Enregistrer</button>
 			</div>
 			<div class="col-sm-3">
 				<a class="btn btn-default btn-lg" href="{{route('companies.show',$company)}}">Retour</a>

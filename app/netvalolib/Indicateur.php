@@ -56,15 +56,15 @@ class Indicateur
 
 	//Croissance et Renta
 	public function CAGR(){
-		return intval((sqrt($this->crN->CA / $this->crN2->CA) - 1) * 100);
+		return round((sqrt($this->crN->CA / $this->crN2->CA) - 1) * 100);
 	}
 
 	public function ROCE(){
-		return intval(($this->crN->Rex * (1 - 0.33) / $this->bilanN->CE) * 100);
+		return round(($this->crN->Rex * (1 - 0.33) / $this->bilanN->CE) * 100);
 	}
 
 	public function MargeOp(){
-		return intval($this->crN->Rex / $this->crN->CA * 100);
+		return round($this->crN->Rex / $this->crN->CA * 100);
 	}
 
 	public function BCG(){

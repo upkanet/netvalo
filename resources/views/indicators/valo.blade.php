@@ -3,6 +3,7 @@
 		<br>
 		<div class="panel panel-primary">
 			<div class="panel-body">
+				<p>R&eacute;partition des r&eacute;sultats des {{count($valo->list())}} m&eacute;thodes d'estimation</p>
 				<canvas id="valoCanvas" width="100%" height="30"></canvas>
 				<script type="text/javascript">
 					var fourchLow = '{{ million($valo->fourchette()['low']) }}';

@@ -38,8 +38,8 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        Company::create($request->all());
-        return redirect('home');
+        $company = Company::create($request->all());
+        return redirect()->route('companies.show',$company);
     }
 
     /**
@@ -86,7 +86,7 @@ class CompanyController extends Controller
         $company = Company::find($id);
         $company->fill($request->all());
         $company->save();
-        return redirect('home');
+        return redirect()->route('companies.show',$company);
     }
 
     /**

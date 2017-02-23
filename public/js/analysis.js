@@ -93,6 +93,16 @@ var evoBFRoptions = {
         legend: {
             display: false
         },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    callback: function(value,index,values){
+                        return value+' mois CA';
+                    }
+                }
+            }]
+        },
         tooltips: {
             enabled: true,
             callbacks:{

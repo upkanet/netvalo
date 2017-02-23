@@ -60,7 +60,7 @@ class Valo
 	}
 
 	public function list(){
-		$methodes = ['val_patri', 'val_prod', 'cap_rn', 'cap_ebe_corr', 'cap_caf', 'cap_caf_trez', 'cap_risque', 'val_caf_pret', 'val_netvalo'];
+		$methodes = ['val_patri', 'val_prod', 'cap_rn', 'cap_ebe_corr', 'cap_caf', 'cap_caf_trez', 'cap_risque', 'val_caf_pret'];
 		$result = [];
 
 		foreach($methodes as $methode){
