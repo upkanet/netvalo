@@ -58,7 +58,7 @@ class BilanController extends Controller
         }
 
         $bilan->save();
-        return "store";
+        return redirect()->route('companies.show',$bilan->company);
     }
 
     /**
@@ -73,19 +73,12 @@ class BilanController extends Controller
         $bilan = $company->bilan($year);
 
         $fields = config('balance_fields.bilan_fields');
+        $slice = 34;
+        $fields_actif = array_slice($fields,0,$slice);
+        $fields_passif = array_slice($fields,$slice);
         $ss_tots = config('balance_fields.bilan_ss_tot');
-        foreach ($ss_tots as $ss_tot_key => $ss_tot_value) {
-            //print_r($ss_tot_key.' : '.$bilan->sig($ss_tot_key));
-            print_r('SIG '.$ss_tot_key.' : '.$bilan->sig($ss_tot_key).'<br>');
-        }
-        print_r('<hr>Immo : '.$bilan->Immo.'<hr>');
-        print_r('<hr>BFR : '.$bilan->BFR.'<hr>');
-        print_r('<hr>TrezNette : '.$bilan->TrezNette.'<hr>');
-        print_r('<hr>AE : '.$bilan->AE.'<hr>');
-        print_r('<hr>CP : '.$bilan->CP.'<hr>');
-        print_r('<hr>Dette Fi : '.$bilan->DetteFi.'<hr>');
-        print_r('<hr>CE : '.$bilan->CE.'<hr>');
-        return view('bilan', compact('bilan','company','fields'));
+
+        return view('resources.bilan-form', compact('bilan','company','year','fields_actif','fields_passif','ss_tots'));
     }
 
     /**
@@ -108,7 +101,14 @@ class BilanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $bilan = Bilan::find($id);
+        //Champs numeriques
+        $fields = config('balance_fields.bilan_fields');
+        foreach ($fields as $field => $field_name) {
+            $bilan->$field = ($request->input($field) !== null) ? $request->input($field) : 0;
+        }
+        $bilan->save();
+        return redirect()->route('companies.show',$bilan->company);
     }
 
     /**
