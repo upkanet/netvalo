@@ -27,7 +27,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return "create";
     }
 
     /**
@@ -69,7 +69,7 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "edit";
     }
 
     /**

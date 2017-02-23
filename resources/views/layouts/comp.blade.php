@@ -14,6 +14,10 @@
 
 <div class="col-sm-1" id="companiesList">
 	<h4 class="text-center"><img src="{{url('img/logo.png')}}" width="100%"></h4>
+	<a class="btn btn-primary btn-block btn-sm" href="{{url('/home')}}">
+		<span class="glyphicon glyphicon-user" aria-hidden="true"></span><br>Mon Compte
+	</a>
+	<br>
 	@foreach(Auth::user()->companies as $cmp)
 		@if($cmp->id == $company->id)
 		<a class="btn btn-success btn-block btn-sm companyBtn" href="{{url('/companies/'.$cmp->id)}}">
@@ -24,7 +28,7 @@
 		</a>
 	@endforeach
 	
-	<button class="btn btn-default btn-block companyBtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><br>Ajouter</button>
+	<a href="{{route('companies.create')}}" class="btn btn-default btn-block companyBtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><br>Ajouter</a>
 </div>
 
 <div class="col-sm-1" id="analysisList">
