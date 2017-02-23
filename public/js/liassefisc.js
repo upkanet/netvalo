@@ -12,10 +12,27 @@ function sig(field){
 	return ret;
 }
 
+function updateRez(){
+	var rex = sig('prod_exploit') - sig('charges_exploit');
+	var rfi = sig('prod_fi') - sig('charges_fi');
+	var rcai = rex + rfi + sig('benef_att') - sig('pertes_supp');
+	var rexcep = sig('prod_excep') - sig('charges_excep');
+	var rn = sig('prod') - sig('charges');
+
+	$("#rex").val(rex);
+	$("#rfi").val(rfi);
+	$("#rcai").val(rcai);
+	$("#rexcep").val(rexcep);
+	$("#rn").val(rn);
+}
+
 function updateSIG(){
 	listSIG.forEach(function(tot){
 		$("#"+tot).val(sig(tot));
 	});
+	if($("#rex").length){
+		updateRez();
+	}
 }
 
 $(document).ready(function(){

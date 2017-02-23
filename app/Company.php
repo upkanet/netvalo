@@ -46,7 +46,7 @@ class Company extends Model
         //get last year
         $maxy = max($this->bilans->max('year') ?: PHP_INT_MIN, $this->crs->max('year') ?: PHP_INT_MIN);
 
-        if($miny){
+        if($miny != PHP_INT_MAX){
             for($i=$miny; $i <= $maxy; $i++){
                 $this->bilan($i) != null ? $avDocs[$i]['bilan'] = true : $avDocs[$i]['bilan'] = false;
                 $this->cr($i) != null ? $avDocs[$i]['cr'] = true : $avDocs[$i]['cr'] = false;

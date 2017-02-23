@@ -92,7 +92,7 @@
 									<tr class="success">
 										<td><strong>Total charges financi&egrave;res</strong></td>
 										<td>
-											@component('inc.currency_input_readonly') charges_exploit
+											@component('inc.currency_input_readonly') charges_fi
 											@endcomponent
 										</td>
 									</tr>
@@ -121,12 +121,15 @@
 								@elseif($i==38)
 									<tr class="success">
 										<td><strong>Total charges exceptionnelles</strong></td>
-										<td>0</td>
+										<td>
+											@component('inc.currency_input_readonly') charges_excep
+											@endcomponent
+										</td>
 									</tr>
 									<tr class="danger">
 										<td><strong>R&eacute;sultat exceptionnel</strong></td>
 										<td>
-											@component('inc.currency_input_readonly') charges_excep
+											@component('inc.currency_input_readonly') rexcep
 											@endcomponent
 										</td>
 									</tr>
