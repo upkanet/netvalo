@@ -6,16 +6,10 @@
 <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}">
 @endsection
 
-@section('content')
-<div class="col-sm-10 col-sm-offset-1" id="middleView">
-@section('middle')
-@show
-</div>
-
-<div class="col-sm-1" id="companiesList">
-	<h4 class="text-center"><img src="{{url('img/logo.png')}}" width="100%"></h4>
+<div class="col-lg-1 col-sm-2" id="companiesList">
+	<h4 class="text-center">NetValo</h4>
 	<a class="btn btn-primary btn-block btn-sm" href="{{url('/home')}}">
-		<span class="glyphicon glyphicon-user" aria-hidden="true"></span><br>Mon Compte
+		<span class="glyphicon glyphicon-user" aria-hidden="true"></span><br>Mon<br>Compte
 	</a>
 	<br>
 	@foreach(Auth::user()->companies as $cmp)
@@ -31,7 +25,13 @@
 	<a href="{{route('companies.create')}}" class="btn btn-default btn-block companyBtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><br>Ajouter</a>
 </div>
 
-<div class="col-sm-1" id="analysisList">
+@section('content')
+<div class="col-lg-10 col-sm-8" id="middleView">
+@section('middle')
+@show
+</div>
+
+<div class="col-lg-1 col-sm-2" id="analysisList">
 	<h4 class="text-center">Estimer</h4>
 	@php $oneAnalysis = false; @endphp
 	@if(count($company->availableDocsArray()) > 0)
