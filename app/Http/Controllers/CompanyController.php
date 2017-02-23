@@ -27,7 +27,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return "create";
+        return view('resources.company-form');
     }
 
     /**
@@ -38,7 +38,8 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Company::create($request->all());
+        return redirect('home');
     }
 
     /**
@@ -69,7 +70,8 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        return "edit";
+        $company = Company::find($id);
+        return view('resources.company-form',compact('company'));
     }
 
     /**
@@ -81,7 +83,10 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $company = Company::find($id);
+        $company->fill($request->all());
+        $company->save();
+        return redirect('home');
     }
 
     /**
@@ -92,6 +97,7 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $company = Company::find($id);
+        $company->delete();
     }
 }

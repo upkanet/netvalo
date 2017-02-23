@@ -21,6 +21,8 @@ class CreateCompaniesTable extends Migration
 
             $table->string('name');
             $table->string('siret',14);
+            $table->string('city')->nullable();
+            $table->string('zipcode',5)->nullable();
             $table->timestamps();
         });
     }
