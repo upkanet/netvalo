@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\netvalolib\Valo;
 
 class Company extends Model
 {
@@ -33,6 +34,10 @@ class Company extends Model
         return $this->crs()->where('year', $year)->first();
     }
 
+    public function requests(){
+        return $this->hasMany('App\Request');
+    }
+
     public function hasYear($year){
         return ($this->bilan($year) !== null) || ($this->cr($year) !== null);
     }
@@ -58,5 +63,10 @@ class Company extends Model
         }
 
         return $avDocs;
+    }
+
+    public function valo($year){
+        $valo = new Valo($this,$year);
+        return $valo;
     }
 }

@@ -64,40 +64,27 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($requests as $r)
                     <tr>
                         <td>
-                            Mise en relation - Conseil en Strat&eacute;gie
+                            {{$r->request_type_id}} - 
+                            Mise en relation - {{$r->type->name}}
                         </td>
                         <td>
-                            23/02/2017
+                            {{$r->created_at}}
                         </td>
                         <td>
-                            Empty Company
+                            {{$r->company->name}}
                         </td>
                         <td>
-                            4.5M€ -> 6.3M€ (2017)
+                            {{$r->valoDetails()}}
                         </td>
                         <td>
-                            Partenaires identifiés
+                            {{$r->request_level_id}} - 
+                                {{$r->level->name}}
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            Mise en relation - Vente de la soci&eacute;t&eacute;
-                        </td>
-                        <td>
-                            23/02/2017
-                        </td>
-                        <td>
-                            World Company
-                        </td>
-                        <td>
-                            4.5M€ -> 6.3M€ (2017)
-                        </td>
-                        <td>
-                            Partenaire Valid&eacute;
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

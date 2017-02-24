@@ -78,7 +78,7 @@ class RequestsTableSeeder extends Seeder
         //Spoof Requests
         DB::table('requests')->insert([
         	'user_id' => 1,
-        	'request_type_id' => 2,
+        	'request_type_id' => 1,
         	'company_id' => 1,
         	'valo_year' => 2010,
         	'request_level_id' => 1,
@@ -87,6 +87,110 @@ class RequestsTableSeeder extends Seeder
         		'company' => 'World Company',
         		'valo' => '5,0M€ - 6,5M€ (2010)'
         	])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 2,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 2,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 3,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 3,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 3,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 4,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 2,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 5,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 4,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 2,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 2,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 6,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 1,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 7,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
+        ]);
+
+        DB::table('requests')->insert([
+            'user_id' => 1,
+            'request_type_id' => 1,
+            'company_id' => 1,
+            'valo_year' => 2010,
+            'request_level_id' => 3,
+            'snapshot' => json_encode([
+                'user' => 'JD',
+                'company' => 'World Company',
+                'valo' => '5,0M€ - 6,5M€ (2010)'
+            ])
         ]);
 
 

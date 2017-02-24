@@ -26,6 +26,7 @@ class HomeController extends Controller
     {   
         $user = Auth::user();
         $companies = $user->companies;
-        return view('home', compact('companies'));
+        $requests = $user->requests;
+        return view('home', compact('companies','requests'));
     }
 }
