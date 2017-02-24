@@ -66,7 +66,7 @@
                 <tbody>
                     @if($requests !== null)
                     @foreach($requests as $r)
-                    <tr class="@if($r->level->level == -1) danger @elseif($r->level->level == 5) success @elseif($r->level->level == 3) info @endif">
+                    <tr class="@if($r->level->level == -1) text-danger @elseif($r->level->level == 5) success @elseif($r->level->level == 3) warning @endif">
                         <td>
                             {{$r->type->name}}
                         </td>

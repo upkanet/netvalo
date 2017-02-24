@@ -29,7 +29,7 @@
 <input type="hidden" name="company_id" value="{{$company->id}}">
 <input type="hidden" name="year" value="{{$year}}">
 	<div class="row">
-		<div class="col-lg-9 col-sm-6">
+		<div class="col-lg-6 col-lg-offset-3 col-sm-6">
 			<button class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Enregistrer</button>
 		</div>
 		<div class="col-lg-3 col-sm-6">
