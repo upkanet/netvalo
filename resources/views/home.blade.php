@@ -59,19 +59,19 @@
                         <td><strong>Demandes</strong></td>
                         <td><strong>Date</strong></td>
                         <td><strong>Soci&eacute;t&eacute;</strong></td>
-                        <td><strong>Valo le jour de la demande</strong></td>
+                        <td><strong>Valorisation</strong></td>
                         <td><strong>Statut</strong></td>
                     </tr>
                 </thead>
                 <tbody>
+                    @if($requests !== null)
                     @foreach($requests as $r)
-                    <tr>
+                    <tr class="@if($r->level->level == -1) danger @elseif($r->level->level == 5) success @elseif($r->level->level == 3) info @endif">
                         <td>
-                            {{$r->request_type_id}} - 
-                            Mise en relation - {{$r->type->name}}
+                            {{$r->type->name}}
                         </td>
                         <td>
-                            {{$r->created_at}}
+                            {{datejour($r->created_at)}}
                         </td>
                         <td>
                             {{$r->company->name}}
@@ -80,11 +80,13 @@
                             {{$r->valoDetails()}}
                         </td>
                         <td>
-                            {{$r->request_level_id}} - 
-                                {{$r->level->name}}
+                            {{$r->level->name}}
                         </td>
                     </tr>
                     @endforeach
+                    @else
+                    <tr colspan="5">Aucune demande effecu&eaucte;e</tr>
+                    @endif
                 </tbody>
             </table>
         </div>

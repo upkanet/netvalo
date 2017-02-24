@@ -82,6 +82,7 @@ class RequestsTableSeeder extends Seeder
         	'company_id' => 1,
         	'valo_year' => 2010,
         	'request_level_id' => 1,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
         	'snapshot' => json_encode([
         		'user' => 'JD',
         		'company' => 'World Company',
@@ -95,6 +96,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 2,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',
@@ -108,6 +110,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 3,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',
@@ -121,6 +124,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 4,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',
@@ -134,6 +138,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 5,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',
@@ -147,6 +152,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 2,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',
@@ -160,6 +166,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 6,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',
@@ -173,6 +180,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 7,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',
@@ -186,6 +194,7 @@ class RequestsTableSeeder extends Seeder
             'company_id' => 1,
             'valo_year' => 2010,
             'request_level_id' => 3,
+            'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
                 'user' => 'JD',
                 'company' => 'World Company',

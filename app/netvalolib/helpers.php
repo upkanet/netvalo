@@ -27,3 +27,7 @@ function mille($number) {
 function million($number){
 	return number_format($number/1000000,1,',',' ');
 }
+
+function datejour($datestr){
+	return date("d-m-Y", strtotime($datestr));
+}
