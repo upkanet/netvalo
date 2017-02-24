@@ -9,7 +9,13 @@
 
 
 @section('middle')
-<div class="col-sm-12"><h2>{{$company->name}}</h2><input type="hidden" id="companyIdInput" value="{{ $company->id }}"></div>
+<div class="row">
+	<h2>{{$company->name}}</h2><input type="hidden" id="companyIdInput" value="{{ $company->id }}">
+</div>
+@if($company->countAvailableAnalysis() == 0)
+<div class="alert alert-info" role="alert">Ajoutez au moins <strong>2 Bilans</strong> et <strong>3 Comptes de R&eacute;sultats</strong> cons&eacute;cutifs pour calculer une premi&egrave;re estimation.<br>
+Exemple : Bilan {{date('Y') - 1}}, Bilan {{date('Y') - 2}}, Compte de R&eacute;sultats {{date('Y') - 1}}, Compte de R&eacute;sultats {{date('Y') - 2}} et Compte de R&eacute;sultats {{date('Y') - 3}}</div>
+@endif
 <div class="row">
 	<div class="col-sm-4">
 	<h4 class="text-center">Bilans</h4>

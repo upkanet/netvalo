@@ -46,6 +46,18 @@ class Company extends Model
         return ($this->bilan($year) !== null) && ($this->bilan($year-1) !== null) && ($this->cr($year) !== null) && ($this->cr($year-1) !== null)  && ($this->cr($year-2) !== null);
     }
 
+    public function countAvailableAnalysis(){
+        $c = 0;
+        if($this->availableDocsArray() !== null){
+            foreach($this->availableDocsArray() as $year => $values){
+                if($values['analysis']){
+                    $c += 1;
+                }
+            }
+        }
+        return $c;
+    }
+
     public function availableDocsArray(){
         $avDocs = null;
         //get first year

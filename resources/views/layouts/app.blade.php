@@ -33,7 +33,7 @@
 
 <div id="footer">
     @section('footer')
-    <p class="text-center">2017 &copy; NetValo - debug width : <span class="visible-xs-block">xs</span><span class="visible-sm-block">sm</span><span class="visible-md-block">md</span><span class="visible-lg-block">lg</span></p>
+    <p class="text-center">{{ date('Y') }} &copy; NetValo</p>
     @show
 </div>
 
