@@ -35,4 +35,30 @@ class User extends Authenticatable
         return $this->hasMany('App\Request');
     }
 
+    public function populateDemo(){
+        $company = [
+            'user_id' => $this->id,
+            'name' => 'Demo',
+            'siret' => '12345678901234',
+        ];
+        $company = Company::create($company);
+
+        //Bilans
+        for($i=1;$i<=2;$i++){
+            $bilan = Bilan::find($i);
+            $bilan = $bilan->replicate();
+            $bilan->company_id = $company->id;
+            $bilan->save();
+        }
+
+        //CRs
+        for($i=1;$i<=3;$i++){
+            $cr = CR::find($i);
+            $cr = $cr->replicate();
+            $cr->company_id = $company->id;
+            $cr->save();
+        }
+
+    }
+
 }
