@@ -79,8 +79,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
         	'user_id' => 2,
         	'request_type_id' => 1,
-        	'company_id' => 1,
-        	'valo_year' => 2010,
+        	'company_id' => 3,
+        	'valo_year' => 2016,
         	'request_level_id' => 1,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
         	'snapshot' => json_encode([
@@ -93,8 +93,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 2,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 2,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
@@ -107,8 +107,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 3,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 3,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
@@ -121,8 +121,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 3,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 4,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
@@ -135,8 +135,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 2,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 5,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
@@ -149,8 +149,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 4,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 2,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
@@ -163,8 +163,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 2,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 6,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
@@ -177,8 +177,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 1,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 7,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([
@@ -191,8 +191,8 @@ class RequestsTableSeeder extends Seeder
         DB::table('requests')->insert([
             'user_id' => 2,
             'request_type_id' => 1,
-            'company_id' => 1,
-            'valo_year' => 2010,
+            'company_id' => 3,
+            'valo_year' => 2016,
             'request_level_id' => 3,
             'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:d'),
             'snapshot' => json_encode([

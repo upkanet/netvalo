@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -36,29 +37,26 @@ class User extends Authenticatable
     }
 
     public function populateDemo(){
-        $company = [
-            'user_id' => $this->id,
-            'name' => 'Demo',
-            'siret' => '12345678901234',
-        ];
-        $company = Company::create($company);
+        $demoUser = User::find(1);
 
-        //Bilans
-        for($i=1;$i<=2;$i++){
-            $bilan = Bilan::find($i);
-            $bilan = $bilan->replicate();
-            $bilan->company_id = $company->id;
-            $bilan->save();
+        foreach ($demoUser->companies as $demoCompany) {
+            $newCompany = $demoCompany->replicate();
+            $newCompany->user_id = $this->id;
+            $newCompany->save();
+
+            foreach ($demoCompany->bilans as $demoBilan) {
+                $newBilan = $demoBilan->replicate();
+                $newBilan->company_id = $newCompany->id;
+                $newBilan->save();
+            }
+
+            foreach ($demoCompany->crs as $demoCR) {
+                $newCR = $demoCR->replicate();
+                $newCR->company_id = $newCompany->id;
+                $newCR->save();
+            }
+
         }
-
-        //CRs
-        for($i=1;$i<=3;$i++){
-            $cr = CR::find($i);
-            $cr = $cr->replicate();
-            $cr->company_id = $company->id;
-            $cr->save();
-        }
-
     }
 
 }

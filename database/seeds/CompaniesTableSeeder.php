@@ -13,9 +13,15 @@ class CompaniesTableSeeder extends Seeder
     {
         DB::table('companies')->insert([
         	'user_id' => 1,
-        	'name' => 'DemoPattern',
-        	'siret' => '12345678901234',
+        	'name' => 'Demo A',
+        	'siret' => '00000000000000',
     	]);
+
+        DB::table('companies')->insert([
+            'user_id' => 1,
+            'name' => 'Demo B',
+            'siret' => '00000000000000',
+        ]);
 
         DB::table('companies')->insert([
             'user_id' => 2,
