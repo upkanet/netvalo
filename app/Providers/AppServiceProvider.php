@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Prevent Migration Error on MySQL db older than 5.7.7
+        \Schema::defaultStringLength(191);
     }
 
     /**

@@ -13,14 +13,14 @@ class CompaniesTableSeeder extends Seeder
     {
         DB::table('companies')->insert([
         	'user_id' => 1,
-        	'name' => 'World Company',
-        	'siret' => '12345678901111',
+        	'name' => 'DemoPattern',
+        	'siret' => '12345678901234',
     	]);
 
         DB::table('companies')->insert([
-            'user_id' => 1,
-            'name' => 'Empty Company',
-            'siret' => '88776655443345',
+            'user_id' => 2,
+            'name' => 'World Company (test)',
+            'siret' => '00000000000000',
         ]);
     }
 }
