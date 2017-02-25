@@ -33,7 +33,7 @@
 
 <div id="footer">
     @section('footer')
-    <p class="text-center">{{ date('Y') }} &copy; NetValo</p>
+    <p class="text-center">{{ date('Y') }} &copy; NetValo @if(App::environment('local')) - Dev @endif</p>
     @show
 </div>
 

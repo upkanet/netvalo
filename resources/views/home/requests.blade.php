@@ -22,7 +22,7 @@
                 {{$r->company->name}}
             </td>
             <td>
-                {{$r->valoDetails()}}
+                {{$r->valoDetails()}} ({{$r->valo_year}})
             </td>
             <td>
                 {{$r->level->name}}
