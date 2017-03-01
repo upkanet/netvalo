@@ -34,3 +34,6 @@ Route::get('/companies/{company}/cr/{year}','CompteResultatController@show');
 //Analysis
 Route::get('/companies/{company}/analysis/{year}','AnalysisController@show');
 
+//Requetes
+Route::post('/requests','RequestController@store')->name('requests.store');
+
