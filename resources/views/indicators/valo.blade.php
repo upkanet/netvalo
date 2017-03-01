@@ -23,34 +23,16 @@
 			<h3 class="panel-title">Allez plus loin ...</h3>
 		</div>
 		<div class="panel-body">
-			<ul id="services_list">
-	            <li><span class="glyphicon glyphicon-briefcase"></span> Strat&eacute;gie
-	            	<ul>
-	            		<li><a href="#">&Ecirc;tre conseillé pour g&eacute;rer cette entreprise et am&eacute;liorer sa valeur</a></li>
-	            	</ul>
-	            </li>
-	            <li><span class="glyphicon glyphicon-euro"></span> Cession-Acquisition
-	            	<ul>
-	            		<li><a href="#">Trouver un conseiller pour Vendre cette entreprise</a></li>
-	            		<li><a href="#">Trouver un conseiller pour Acheter cette entreprise</a></li>
-	            	</ul>
-	            </li>
-				<li><span class="glyphicon glyphicon-signal"></span> Valorisation
-					<ul>
-						<li><a href="#">Obtenir la valorisation détaill&eacute;e reprenant les 8 m&eacute;thodes</a> (90&euro; HT)</li>
-						<li><a href="#">Obtenir une analyse financière personnalisée sur la base de la valorisation détaill&eacute;e</a> (190&euro; HT)</li>
-					</ul>
-				</li>
-	         </ul>
-	         <hr>
-	         <p class="text-center">Pour toute autre demande :
-	         	<button class="btn btn-default">Nous contacter</button>
-	         </p>
+			@include('indicators.valo.further')
 		</div>
 	</div>
 </div>
 
 @section('modals')
 	@parent
-	
+	@component('inc.modal')
+		@include('indicators.valo.request_form')
+		@slot('modal_title', 'Requ&ecirc;te')
+		@slot('modal_id', 'request_modal')
+	@endcomponent
 @endsection

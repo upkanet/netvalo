@@ -3,14 +3,14 @@ body{
 }
 
 html{
-	/* This image will be displayed fullscreen */
-	background:url('../img/new-york-skyscrapers.jpg') no-repeat center center;
+    /* This image will be displayed fullscreen */
+    background:url('../img/new-york-skyscrapers.jpg') no-repeat center center;
 
-	/* Ensure the html element always takes up the full height of the browser window */
-	min-height:100%;
+    /* Ensure the html element always takes up the full height of the browser window */
+    min-height:100%;
 
-	/* The Magic */
-	background-size:cover;
+    /* The Magic */
+    background-size:cover;
     background-attachment: fixed;
 }
 
@@ -36,4 +36,8 @@ html{
 
 .alert-primary{
     background-color: rgba(33,150,243,0.7);
+}
+
+.modal-backdrop{
+    display: none;
 }

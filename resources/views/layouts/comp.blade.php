@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}">
 @endsection
 
+@section('content')
 <div class="col-lg-1 col-sm-2" id="companiesList">
 	<h4 class="text-center">NetValo</h4>
 	<a class="btn btn-primary btn-block btn-sm" href="{{url('/home')}}">
@@ -25,7 +26,6 @@
 	<a href="{{route('companies.create')}}" class="btn btn-default btn-block companyBtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><br>Ajouter</a>
 </div>
 
-@section('content')
 <div class="col-lg-10 col-sm-8" id="middleView">
 @section('middle')
 @show
