@@ -17,25 +17,25 @@
 Exemple : Bilan {{date('Y') - 1}}, Bilan {{date('Y') - 2}}, Compte de R&eacute;sultats {{date('Y') - 1}}, Compte de R&eacute;sultats {{date('Y') - 2}} et Compte de R&eacute;sultats {{date('Y') - 3}}</div>
 @endif
 <div class="row">
-	<div class="col-sm-4">
+	<div class="col-sm-4 col-sm-offset-4">
 	<h4 class="text-center">Bilans</h4>
 	</div>
-	<div class="col-sm-4 col-sm-offset-4">
+	<div class="col-sm-4">
 	<h4 class="text-center">Comptes de Résultats</h4>
 	</div>
 </div>
 @if(count($company->availableDocsArray()) > 0)
 @foreach($company->availableDocsArray() as $year => $values)
 <div class="row">
+	<div class="col-sm-4 gradYear">
+		<p class="text-center yearList">{{$year}}</p>
+	</div>
 	<div class="col-sm-4">
 	@if($values['bilan'])
 		<p class="text-center"><a href="{{$company->id}}/bilan/{{$year}}" class="btn btn-default btn-rnd">B</a></p>
 	@else
 		<p class="text-center"><a href="../bilans/create?company={{$company->id}}&year={{$year}}" class="btn btn-primary btn-rnd"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
 	@endif
-	</div>
-	<div class="col-sm-4 gradYear">
-		<p class="text-center yearList">{{$year}}</p>
 	</div>
 	<div class="col-sm-4">
 	@if($values['cr'])
@@ -59,7 +59,7 @@ Exemple : Bilan {{date('Y') - 1}}, Bilan {{date('Y') - 2}}, Compte de R&eacute;s
 					<div class="form-group text-center">
 						<select class="form-control input-lg" id="selectYearInput">
 							@foreach($possibleNewYears as $y)
-								<option>{{ $y }}</option>
+								<option @if($y == (date('Y')-1)) selected @endif>{{ $y }}</option>
 							@endforeach
 						</select>
 						<a class="btn btn-success" onclick="selectYear()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Ajouter</a>
