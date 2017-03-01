@@ -79,7 +79,7 @@
         </div>
         <div class="panel-body">
           <ul id="services_list">
-            <li>Estimation de la valeur selon <strong>9 m&eacute;thodes</strong></li>
+            <li>Estimation de la valeur selon <strong>8 m&eacute;thodes</strong></li>
             <li>Analyse Financi&egrave;re</li>
             <li>Conseils Strat&eacute;giques</li>
             <li>Mise en relation avec des Experts</li>
