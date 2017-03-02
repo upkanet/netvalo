@@ -11,6 +11,8 @@ class Valo
 	private $lfpond;
 
 	public function __construct(Company $company, $year){
+		$this->company = $company;
+		$this->year = $year;
 		$this->lfpond = new LiasseFiscPond($company, $year);
 	}
 

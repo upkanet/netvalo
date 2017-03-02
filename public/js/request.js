@@ -3,7 +3,7 @@ function openRequest(reqType){
 	var mod_config = {
 		strat:{
 			title: 'Optimiser cette entreprise',
-			message: 'Vous souhaitez &ecirc;tre mis en relation avec un consultant qui vous accompagnera dans l\'optimisation de votre entreprise.'
+			message: 'Vous souhaitez &ecirc;tre mis en relation avec un consultant qui vous accompagnera dans la gestion de votre entreprise.'
 		},
 		sell:{
 			title: 'Transmettre cette entreprise',
@@ -13,7 +13,7 @@ function openRequest(reqType){
 			title: 'Acqu&eacute;rir cette entreprise',
 			message: 'Vous souhaitez &ecirc;tre mis en relation avec un conseil pour acqu&eacute;rir cette entreprise.'
 		},
-		det_valo:{
+		valo_det:{
 			title: 'Obtenir la valorisation d&eacute;taill&eacute;e',
 			message: 'Vous souhaitez acqu&eacute;rir la valorisation d&eacute;taill&eacute;e de cette entreprise selon les 8 m&eacute;thodes reconnues.'
 		},
@@ -32,6 +32,7 @@ function openRequest(reqType){
 
 	$('#request_modal-title').html(mod_config[reqType].title);
 	$('#request_modal-message').html(mod_config[reqType].message);
+	$('#request_modal-rtype').val(reqType);
 	$('#request_modal-send-btn').click(function(){
 		console.log('send request');
 		$('#request_form').submit();

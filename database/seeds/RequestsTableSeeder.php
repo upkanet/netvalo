@@ -18,18 +18,28 @@ class RequestsTableSeeder extends Seeder
         ]);
 
         DB::table('request_types')->insert([
-        	'acronyme' => 'vente',
+        	'acronyme' => 'sell',
         	'name' => 'Vendre la société'
         ]);
 
         DB::table('request_types')->insert([
-        	'acronyme' => 'achat',
+        	'acronyme' => 'buy',
         	'name' => 'Acheter la société'
         ]);
 
         DB::table('request_types')->insert([
-        	'acronyme' => 'detail_valo',
+        	'acronyme' => 'valo_det',
         	'name' => 'Obtenir une valorisation détaillée'
+        ]);
+
+        DB::table('request_types')->insert([
+            'acronyme' => 'fi_analysis',
+            'name' => 'Analyse financière'
+        ]);
+
+        DB::table('request_types')->insert([
+            'acronyme' => 'contact',
+            'name' => 'Demande de renseignement'
         ]);
 
         //Init Request Levels

@@ -1,6 +1,9 @@
 <div class="alert alert-primary" id="request_modal-message"></div>
 <form action="{{ route('requests.store') }}" id="request_form" method="POST" role="form" data-toggle="validator">
-{{ csrf_field() }}
+	{{ csrf_field() }}
+	<input type="hidden" name="rtype" id="request_modal-rtype">
+	<input type="hidden" name="company_id" value="{{$company->id}}">
+	<input type="hidden" name="valo_year" value="{{$valo->year}}">
 	<table class="table">
 		<tbody>
 			<tr>
@@ -28,31 +31,31 @@
 				<td>
 					<div class="form-group">
 						<label class="sr-only" for="modalUserPhoneInput">T&eacute;l&eacute;phone</label>
-						<input type="text" name="phone" pattern="[0-9]{10}" class="form-control" id="modalUserPhoneInput" placeholder="0102030405" data-error="Veuillez respecter le format requis : 10 chiffres (sans espace)" value="{{Auth::user()->phone or ""}}" required>
+						<input type="text" name="phone" pattern="[0-9]{10}" class="form-control" id="modalUserPhoneInput" placeholder="0102030405" data-error="Veuillez respecter le format requis : 10 chiffres (sans espace)" value="{{Auth::user()->phone}}" required>
 						<div class="help-block with-errors"></div>
 					</div>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2">Adresse</td>
-			</tr>
-			<tr>
-				<td>Rue</td>
-				<td>
-					<div class="form-group">
-						<label class="sr-only" for="modalUserStreetInput">Rue</label>
-						<input type="text" name="street" class="form-control" id="modalUserStreetInput" placeholder="rue" value="{{Auth::user()->street or ""}}">
-					</div>
-				</td>
+				<td colspan="2"><strong>Adresse</strong></td>
 			</tr>
 			<tr>
 				<td colspan="2">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label class="sr-only" for="modalUserStreetInput">Rue</label>
+							<div class="input-group">
+								<div class="input-group-addon">Rue</div>
+								<input type="text" name="street" class="form-control" id="modalUserStreetInput" placeholder="rue" value="{{Auth::user()->street}}">
+							</div>
+						</div>
+					</div>
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label class="sr-only" for="modalUserCPInput">Code Postal</label>
 						    <div class="input-group">
-						      <div class="input-group-addon">CP</div>
-						      <input type="text" name="cp" class="form-control" id="modalUserCPInput" placeholder="75000" value="{{Auth::user()->cp or ""}}">
+						    	<div class="input-group-addon">CP</div>
+						    	<input type="text" name="zipcode" class="form-control" id="modalUserCPInput" placeholder="75000" value="{{Auth::user()->zipcode}}">
 						    </div>
 						</div>
 					</div>
@@ -61,7 +64,7 @@
 							<label class="sr-only" for="modalUserCityInput">Ville</label>
 						    <div class="input-group">
 						      <div class="input-group-addon">Ville</div>
-						      <input type="text" name="city" class="form-control" id="modalUserCityInput" placeholder="Ville" value="{{Auth::user()->city or ""}}" required>
+						      <input type="text" name="city" class="form-control" id="modalUserCityInput" placeholder="Ville" value="{{Auth::user()->city}}" required>
 						    </div>
 						    <div class="help-block with-errors"></div>
 						</div>
