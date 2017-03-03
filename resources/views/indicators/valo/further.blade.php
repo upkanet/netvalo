@@ -12,7 +12,7 @@
     </li>
 	<li><span class="glyphicon glyphicon-signal"></span> Valorisation
 		<ul>
-			<li><a href="#" onclick="openRequest('det_valo');">Obtenir la valorisation détaill&eacute;e reprenant les 8 m&eacute;thodes</a> (90&euro; HT)</li>
+			<li><a href="#" onclick="openRequest('valo_det');">Obtenir la valorisation détaill&eacute;e reprenant les 8 m&eacute;thodes</a> (90&euro; HT)</li>
 			<li><a href="#" onclick="openRequest('fi_analysis');">Obtenir une analyse financière personnalisée sur la base de la valorisation détaill&eacute;e</a> (190&euro; HT)</li>
 		</ul>
 	</li>
