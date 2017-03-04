@@ -34,7 +34,12 @@
 
 <div id="footer">
     @section('footer')
-    <p class="text-center">{{ date('Y') }} &copy; NetValo @if(App::environment('local')) - Dev @endif</p>
+    <p class="text-center">{{ date('Y') }} &copy; NetValo @if(App::environment('local')) - Dev @endif - Une Remarque / Une Suggestion : <span id="email-contact-us"></span></p>
+    <script>
+      var parts = ["con", "valo", "tact", "net", "&#46;", "&#64;", "fr"];
+      var email = parts[0] + parts[2] + parts[5] + parts[3] + parts[1] + parts[4] + parts[6];
+      document.getElementById("email-contact-us").innerHTML = '<a href="mailto:' + email +'" style="btn bt-default btn-sm">' + email + '</a>';
+    </script>
     @show
 </div>
 
