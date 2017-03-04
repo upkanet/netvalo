@@ -28,6 +28,7 @@
     </script>
 </head>
 <body>
+@include('inc.analyticstracking')
 @section('content')
 @show
 
