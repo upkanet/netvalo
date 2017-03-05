@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="{{url('favicon.png')}}" />
 
     <!-- Styles -->
     @section('css')

@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="col-lg-1 col-sm-2" id="companiesList">
-	<h4 class="text-center">NetValo</h4>
+	<h4 class="text-center"><img src="{{url('logo.png')}}" height="32" width="32" alt="netvalo.fr"> NetValo</h4>
 	<a class="btn btn-primary btn-block btn-sm" href="{{url('/home')}}">
 		<span class="glyphicon glyphicon-user" aria-hidden="true"></span><br>Mon<br>Compte
 	</a>

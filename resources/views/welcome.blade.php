@@ -10,7 +10,7 @@
 @section('content')
 <div class="container" id="mainContainer">
     <div class="page-header">
-        <h1>NetValo</h1>
+        <h1><img src="logo.png" alt="netvalo.fr" height="64" width="64"> NetValo.fr</h1>
         <h4>Estimez gratuitement la valeur de votre entreprise</h4>
     </div>
     <div class="row">
