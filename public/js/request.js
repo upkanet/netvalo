@@ -34,7 +34,7 @@ function openRequest(reqType){
 	$('#request_modal-message').html(mod_config[reqType].message);
 	$('#request_modal-rtype').val(reqType);
 	$('#request_modal-send-btn').click(function(){
-		console.log('send request');
+		ga('send','event','Requests','send',reqType);
 		$('#request_form').submit();
 	});
 	$('#request_modal').modal('show');
