@@ -1,26 +1,39 @@
+<?php
+    $nvrequests = config('nvrequests');
+?>
 <ul id="services_list">
-    <li><span class="glyphicon glyphicon-briefcase"></span> Strat&eacute;gie
-    	<ul>
-    		<li><a href="#" onclick="openRequest('strat');">&Ecirc;tre conseillé pour g&eacute;rer cette entreprise et am&eacute;liorer sa valeur</a></li>
-    	</ul>
-    </li>
-    <li><span class="glyphicon glyphicon-euro"></span> Cession-Acquisition
-    	<ul>
-    		<li><a href="#" onclick="openRequest('sell');">Trouver un conseiller pour Vendre cette entreprise</a></li>
-    		<li><a href="#" onclick="openRequest('buy');">Trouver un conseiller pour Acheter cette entreprise</a></li>
-    	</ul>
-    </li>
-	<li><span class="glyphicon glyphicon-signal"></span> Valorisation
-		<ul>
-			<li><a href="#" onclick="openRequest('valo_det');">Obtenir la valorisation détaill&eacute;e reprenant les 8 m&eacute;thodes</a> (90&euro; HT)</li>
-			<li><a href="#" onclick="openRequest('fi_analysis');">Obtenir une analyse financière personnalisée sur la base de la valorisation détaill&eacute;e</a> (190&euro; HT)</li>
-		</ul>
-	</li>
- </ul>
- <hr>
- <p class="text-center">Pour toute autre demande :
- 	<button class="btn btn-default" onclick="openRequest('contact');">Nous contacter</button>
- </p>
+    @foreach($nvrequests as $req_cat_key => $req_cat_data)
+        @if($req_cat_key != 'Contact')
+        <li><span class="glyphicon glyphicon-{{$req_cat_data['icon']}}"></span> {{$req_cat_key}}
+            <ul>
+                @foreach($req_cat_data as $req_type => $req_type_data)
+                    @if($req_type != 'icon')
+                        <li><a href="#" onclick="openRequest('{{$req_type}}');">{{$req_type_data['prompt']}}</a></li>
+                    @endif
+                @endforeach
+            </ul>
+        </li>
+        @endif
+    @endforeach
+</ul>
+<script type="text/javascript">
+var req_type_dataset = {
+@foreach($nvrequests as $req_cat_key => $req_cat_data)
+    @foreach($req_cat_data as $req_type => $req_type_data)
+        @if($req_type != 'icon')
+            {{$req_type}}:{
+                title: '{{$req_type_data['service']}}',
+                message: '{{$req_type_data['desc']}}'
+            },
+        @endif
+    @endforeach
+@endforeach
+};
+</script>
+<hr>
+<p class="text-center">Pour toute autre demande :
+<button class="btn btn-default" onclick="openRequest('contact');">Nous contacter</button>
+</p>
 
 @section('js')
 @parent

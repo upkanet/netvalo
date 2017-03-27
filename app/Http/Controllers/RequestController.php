@@ -19,8 +19,14 @@ class RequestController extends Controller
     	$user->city = $request->input('city');
     	$user->save();
 
-    	$req = new \App\Request();
-    	$rtype = \App\RequestType::where('acronyme',$request->input('rtype'))->first();
+        $rtype_array = nvReqTypes();
+
+        $req = new \App\Request();
+        
+        $rtype = \App\RequestType::firstOrNew(['acronyme' => $request->input('rtype')]);
+        $rtype->name = $rtype_array[$request->input('rtype')]['title'];
+        $rtype->save();
+
     	$rlevel = \App\RequestLevel::where('level',0)->first();
     	$company = Company::find($request->input('company_id'));
     	$req->company()->associate($company);

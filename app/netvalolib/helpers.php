@@ -31,3 +31,21 @@ function million($number){
 function datejour($datestr){
 	return date("d-m-Y", strtotime($datestr));
 }
+
+function nvReqTypes(){
+	$nvrequests = config('nvrequests');
+	$a = array();
+
+	foreach ($nvrequests as $req_cat_key => $req_cat_data){
+    	foreach ($req_cat_data as $req_type => $req_type_data){
+    		if($req_type != 'icon'){
+    			$a[$req_type] = [
+    				'title' => $req_type_data['service'],
+    				'message' => $req_type_data['desc'],
+    			];
+    		}
+    	}
+	}
+
+	return $a;
+}
