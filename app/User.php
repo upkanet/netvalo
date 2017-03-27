@@ -36,6 +36,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Request');
     }
 
+    public function isAdmin(){
+        return $this->admin;
+    }
+
     public function populateDemo(){
         $demoUser = User::find(1);
 

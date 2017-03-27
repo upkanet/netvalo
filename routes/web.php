@@ -37,3 +37,9 @@ Route::get('/companies/{company}/analysis/{year}','AnalysisController@show');
 //Requetes
 Route::post('/requests','RequestController@store')->name('requests.store');
 
+
+//Admin
+Route::get('/dashboard', function() {
+    return "this page requires that you be logged in and an Admin";
+})->middleware('auth','admin');
+
